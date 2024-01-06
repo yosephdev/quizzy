@@ -20,6 +20,8 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
     - [Desktop Wireframe](#desktop-wireframe)
 - [Features](#features)
   - [Existing Features](#existing-features)
+      - [Desktop Header](#desktop-header)
+      - [Mobile Header](#mobile-header)
   - [Planned Features](#planned-features)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
@@ -102,13 +104,21 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 ## Existing Features
 
-- **Quiz Selection**: Users can choose from a variety of quiz categories and difficulty levels, sourced from the Open Trivia Database.
-- **Real-Time Quiz Interaction**: Immediate feedback is provided on answers, enhancing the learning experience.
-- **Responsive Design**: The app is fully responsive, providing an optimal user experience across various devices and screen sizes.
-- **User Interface**: A clean and intuitive UI, ensuring ease of navigation for users of all ages.
+- **Responsive Header**: A responsive header that adjusts to screen size for optimal user experience. It features the app's title and a profile icon, which is displayed on desktop views. On mobile views, a menu toggle is provided for navigation.
+
+#### Desktop Header
+![Desktop Header](docs/header-desktop.png "Desktop Header")
+
+#### Mobile Header
+![Mobile Header](docs/header-mobile.jpg "Mobile Header")
+
+- **Accessibility**: Initial steps have been taken to ensure the app is accessible, following WCAG guidelines.
 
 ## Planned Features
 
+- **Quiz Selection**: Users can choose from a variety of quiz categories and difficulty levels, sourced from the Open Trivia Database.
+- **Real-Time Quiz Interaction**: Immediate feedback is provided on answers, enhancing the learning experience.
+- **User Interface**: A clean and intuitive UI, ensuring ease of navigation for users of all ages.
 - **Leaderboards**: A leaderboard system to add a competitive edge, encouraging users to improve their scores.
 - **Social Sharing**: Integration of social media sharing options, enabling users to share their scores and challenge friends.
 - **Accessibility Enhancements**: Continued improvements to ensure the app is accessible to users with disabilities, adhering to WCAG guidelines.
