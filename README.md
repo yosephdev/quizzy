@@ -16,6 +16,8 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
   - [Colors](#colors)
   - [Structure](#structure)
   - [Wireframes](#wireframes)
+    - [Mobile Wireframe](#mobile-wireframe)
+    - [Desktop Wireframe](#desktop-wireframe)
 - [Features](#features)
   - [Existing Features](#existing-features)
   - [Planned Features](#planned-features)
@@ -80,7 +82,21 @@ A straightforward layout ensuring ease of navigation and optimal performance on 
 
 ## Wireframes
 
-Wireframes will be created to guide the initial design, focusing on mobile-first development.
+The initial design phase of the Online Quiz App included the creation of wireframes to outline the app's layout and features. Using Figma, I started by designing the wireframe for the mobile version, ensuring a mobile-friendly user interface and a focus on usability. Once the mobile layout was finalized, I used it as a foundation to develop the wireframe for the desktop version, adapting the design to take advantage of the larger screen space.
+
+These wireframes provide a visual representation of the app's structure and are crucial for understanding the user flow and interaction design. Both wireframes are included in the project repository and can be viewed through the links below:
+
+### Mobile Wireframe
+[View the Mobile Wireframe](docs/wireframe-Mobile.png)
+
+This wireframe illustrates the mobile interface, highlighting the user's navigation path and interaction points within the app.
+
+### Desktop Wireframe
+[View the Desktop Wireframe](docs/wireframe-Desktop.png)
+
+The desktop wireframe shows the layout and features as they will be arranged in the desktop environment, offering a broader view of the content and functionalities.
+
+[Back to Top](#table-of-contents)
 
 # Features
 
