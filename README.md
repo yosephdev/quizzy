@@ -1,39 +1,145 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Online Quiz App
 
-Welcome,
+Welcome to the Online Quiz App, an interactive platform for testing and improving knowledge in various fields. This app utilizes the Open Trivia Database (<https://opentdb.com/>) to provide a diverse range of quiz questions. Designed as a school project, it aims to offer an engaging user experience using standard web technologies: HTML, CSS, and JavaScript.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Table of Contents
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+- [Online Quiz App](#online-quiz-app)
+  - [Table of Contents](#table-of-contents)
+  - [UX](#ux)
+    - [User Goals](#user-goals)
+    - [User Stories](#user-stories)
+    - [Developer's Goals](#developers-goals)
+- [Design Choices](#design-choices)
+  - [Fonts](#fonts)
+  - [Icons](#icons)
+  - [Colors](#colors)
+  - [Structure](#structure)
+  - [Wireframes](#wireframes)
+- [Features](#features)
+  - [Existing Features](#existing-features)
+  - [Planned Features](#planned-features)
+- [Technologies Used](#technologies-used)
+  - [Languages](#languages)
+  - [Tools](#tools)
+- [Testing](#testing)
+  - [Functionality](#functionality)
+  - [Usability](#usability)
+  - [Accessibility](#accessibility)
+- [Deployment](#deployment)
+- [Credits](#credits)
+  - [Acknowledgments](#acknowledgments)
+  - [Resources](#resources)
 
-## Codeanywhere Reminders
+[Back to Top](#table-of-contents)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## UX
 
-`python3 -m http.server`
+### User Goals
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- Access a wide range of quizzes to test and improve knowledge.
+- Enjoy a user-friendly and engaging quiz experience.
+- Participate in quizzes across various categories.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+### User Stories
 
-`http_server`
+- **As a student**, I want to find interesting quizzes to learn and test my knowledge in different subjects.
+- **As a teacher**, I seek an educational tool where I can engage my students with diverse quiz topics.
+- **As a quiz enthusiast**, I want a platform to challenge myself and compare my scores with others.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Developer's Goals
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- Provide an educational and entertaining quiz platform.
+- Ensure a smooth and responsive user experience.
+- Integrate a variety of quiz categories and difficulty levels.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+[Back to Top](#table-of-contents)
 
-To log into the Heroku toolbelt CLI:
+# Design Choices
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Fonts
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+- **Main Text: Arial** - A widely available, readable font for main content.
+- **Headers: Helvetica** - A clean, modern font for headers and emphasis.
 
----
+## Icons
 
-Happy coding!
+- Simple and intuitive icons for navigation and interaction, sourced from [Font Awesome](https://fontawesome.com/).
+
+## Colors
+
+A color palette that is visually appealing and accessible to all users.
+
+- **Primary Color (Blue)**: For headers and emphasis.
+- **Accent Color (Green)**: For buttons and interactive elements.
+- **Background (White)**: To ensure content readability.
+
+## Structure
+
+A straightforward layout ensuring ease of navigation and optimal performance on all devices.
+
+## Wireframes
+
+Wireframes will be created to guide the initial design, focusing on mobile-first development.
+
+# Features
+
+## Existing Features
+
+- **Quiz Selection**: Users can choose from a variety of quiz categories and difficulty levels, sourced from the Open Trivia Database.
+- **Real-Time Quiz Interaction**: Immediate feedback is provided on answers, enhancing the learning experience.
+- **Responsive Design**: The app is fully responsive, providing an optimal user experience across various devices and screen sizes.
+- **User Interface**: A clean and intuitive UI, ensuring ease of navigation for users of all ages.
+
+## Planned Features
+
+- **Leaderboards**: A leaderboard system to add a competitive edge, encouraging users to improve their scores.
+- **Social Sharing**: Integration of social media sharing options, enabling users to share their scores and challenge friends.
+- **Accessibility Enhancements**: Continued improvements to ensure the app is accessible to users with disabilities, adhering to WCAG guidelines.
+
+# Technologies Used
+
+## Languages
+
+- **HTML**: For structuring the web app.
+- **CSS**: For styling the app.
+- **JavaScript**: For interactive elements and API integration.
+
+## Tools
+
+- **Visual Studio Code**: As the code editor.
+- **Git**: For version control.
+- **GitHub**: For repository hosting.
+
+# Testing
+
+## Functionality
+
+- Cross-browser testing to ensure compatibility.
+- Mobile responsiveness testing.
+
+## Usability
+
+- User testing to assess the ease of navigation and understanding.
+
+## Accessibility
+
+- Adhering to WCAG guidelines for accessibility.
+
+# Deployment
+
+Instructions for deploying the app will be provided here.
+
+# Credits
+
+## Acknowledgments
+
+- Thanks to Open Trivia Database for providing the quiz questions.
+- Appreciation to teachers and students who will test the app.
+
+## Resources
+
+- [MDN Web Docs](https://developer.mozilla.org/) for development references.
+- [CodeInstitute](http://www.codeinstitute.net/) for coding tutorials.
+
+[Back to Top](#table-of-contents)
