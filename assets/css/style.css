@@ -1,6 +1,7 @@
 /* --------- Global Style --------- */
 
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
 }
 
@@ -15,3 +16,61 @@ h6 {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+/* --------- Header --------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;    
+}
+
+.header-icons {   
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+#profile-icon {
+    display: none;    
+    font-size: 24px;    
+    cursor: pointer;   
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#menu-toggle:focus {
+    outline: none;
+}
+
+#main-nav {
+    display: none;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+
+    #profile-icon {
+            display: block;                   
+        }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    #main-nav {
+        display: block;
+    }
+}
