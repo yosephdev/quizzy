@@ -22,6 +22,7 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
   - [Existing Features](#existing-features)
       - [Desktop Header](#desktop-header)
       - [Mobile Header](#mobile-header)
+      - [Navigation Menu](#navigation-menu)
   - [Planned Features](#planned-features)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
@@ -89,11 +90,13 @@ The initial design phase of the Online Quiz App included the creation of wirefra
 These wireframes provide a visual representation of the app's structure and are crucial for understanding the user flow and interaction design. Both wireframes are included in the project repository and can be viewed through the links below:
 
 ### Mobile Wireframe
+
 [View the Mobile Wireframe](docs/wireframe-Mobile.png)
 
 This wireframe illustrates the mobile interface, highlighting the user's navigation path and interaction points within the app.
 
 ### Desktop Wireframe
+
 [View the Desktop Wireframe](docs/wireframe-Desktop.png)
 
 The desktop wireframe shows the layout and features as they will be arranged in the desktop environment, offering a broader view of the content and functionalities.
@@ -106,13 +109,27 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 - **Responsive Header**: A responsive header that adjusts to screen size for optimal user experience. It features the app's title and a profile icon, which is displayed on desktop views. On mobile views, a menu toggle is provided for navigation.
 
+- **Interactive Navigation Menu**: A fully functional navigation menu that adapts to both desktop and mobile views. On desktop, the navigation items are displayed across the header, while on mobile, a hamburger menu icon reveals a dropdown menu for navigating the site. Smooth scrolling is implemented for a better user experience when navigating to different page sections.
+
+- **Accessibility**: Initial steps have been taken to ensure the app is accessible, following WCAG guidelines. This includes semantic HTML, appropriate aria-labels, and keyboard-navigable components.
+
 #### Desktop Header
+
 ![Desktop Header](docs/header-desktop.png "Desktop Header")
 
 #### Mobile Header
+
 ![Mobile Header](docs/header-mobile.jpg "Mobile Header")
 
-- **Accessibility**: Initial steps have been taken to ensure the app is accessible, following WCAG guidelines.
+#### Navigation Menu
+
+- **Desktop Navigation**: The navigation items are centered in the header for a balanced and aesthetic appearance.
+- **Mobile Navigation**: The dropdown menu is easily accessible through the hamburger menu.
+
+![Desktop Navigation](docs/desktop-navigation.jpg "Desktop Navigation")
+![Mobile Navigation](docs/mobile-navigation.jpg "Mobile Navigation")
+
+[Back to Top](#table-of-contents)
 
 ## Planned Features
 
