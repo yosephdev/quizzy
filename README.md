@@ -73,11 +73,17 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
 
 ## Colors
 
-A color palette that is visually appealing and accessible to all users.
+The color palette was chosen to be visually appealing and accessible to all users, ensuring high readability and an engaging user experience.
 
-- **Primary Color (Blue)**: For headers and emphasis.
-- **Accent Color (Green)**: For buttons and interactive elements.
-- **Background (White)**: To ensure content readability.
+- **Primary Color (Blue)**: Used for headers, links, and to emphasize important elements. It provides a professional and calming tone.
+  
+- **Secondary Color (Green)**: Utilized for buttons, hover states, and interactive elements to denote action and progression.
+
+- **Background (White)**: The main background color for content areas to ensure optimal readability and a clean, open feel.
+
+- **Text Color (Dark Gray)**: A softer alternative to black, providing excellent readability without harsh contrast against the white background.
+
+- **Accent Color (Light Blue)**: Highlights for selected categories and quiz options, adding a subtle visual cue for interactivity.
 
 ## Structure
 
