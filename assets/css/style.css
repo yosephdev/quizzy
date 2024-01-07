@@ -184,7 +184,41 @@ h2 {
 }
 
 #category-selection h2 {
-    text-align: center;    
+    text-align: center;
+    color: #007bff;    
+}
+
+/* Quiz */
+
+#quiz-interface {
+    /* display: none; */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#quiz-interface h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+#quiz-interface button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#quiz-interface button:hover {
+    background-color: #218838;
 }
 
 /* Larger screens */
