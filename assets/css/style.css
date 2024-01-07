@@ -124,6 +124,16 @@ h2 {
     opacity: 1;
 }
 
+/* Main */
+.home-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}
+
 /* Welcome Section */
 .quiz-intro {
     text-align: center;
@@ -174,7 +184,7 @@ h2 {
 }
 
 #category-selection h2 {
-    text-align: center;
+    text-align: center;    
 }
 
 /* Larger screens */
