@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+:root {
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 32px;
+}
+
 /* --------- Global Style --------- */
 
 body {
@@ -29,8 +37,15 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-size: 24px;
+h1,
+.quiz-intro h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+h2 {
+    margin-top: var(--spacing-large);
+    color: #0056b3;
 }
 
 .header-icons {
@@ -61,6 +76,8 @@ h1 {
     display: none;
     order: 1;
     width: 100%;
+    z-index: 100;
+    opacity: 1;
 }
 
 #main-nav:not(.hidden) {
@@ -79,7 +96,7 @@ h1 {
     width: 100%;
 }
 
-#main-nav li {    
+#main-nav li {
     width: 100%;
     text-align: left;
 }
@@ -98,28 +115,35 @@ h1 {
 
 .hidden {
     display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hidden.fade-in {
+    display: block;
+    opacity: 1;
 }
 
 /* Welcome Section */
 .quiz-intro {
     text-align: center;
     padding: 20px;
-    background-color: #f8f8f8;
-    /* Optional: if you want a different background */
 }
 
 .quiz-intro h2 {
     margin-bottom: 10px;
     font-size: 28px;
-    /* Larger than your other h2 for emphasis */
     color: #007bff;
-    /* Style it according to your color scheme */
 }
 
 .quiz-intro p {
     font-size: 18px;
-    color: #333;
-    /* A standard text color */
+    color: darkgrey;
+}
+
+.quiz-intro,
+.category-buttons {
+    padding: var(--spacing-large);
 }
 
 /* Main - Category Buttons */
@@ -129,7 +153,6 @@ h1 {
     justify-content: center;
     gap: 10px;
     padding: 15px;
-    /* You already have padding here */
 }
 
 .category-btn {
@@ -141,10 +164,17 @@ h1 {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.category-btn:hover {
+.category-btn:hover,
+.category-btn:focus {
     background-color: #218838;
+    outline: none;
+}
+
+#category-selection h2 {
+    text-align: center;
 }
 
 /* Larger screens */
@@ -159,31 +189,31 @@ h1 {
     }
 
     .header-icons {
-        justify-content: space-between;       
-        flex-grow: 1;       
+        justify-content: space-between;
+        flex-grow: 1;
     }
 
     #main-nav {
         display: flex;
         align-items: center;
-        justify-content: center;       
-        width: 100%;       
+        justify-content: center;
+        width: 100%;
     }
 
     .nav-container {
         display: flex;
-        justify-content: center;        
+        justify-content: center;
     }
 
     #main-nav ul {
         flex-direction: row;
         padding: 0;
         margin: 0;
-        list-style: none;       
+        list-style: none;
     }
 
     #main-nav li {
-        margin: 0 10px;        
+        margin: 0 10px;
     }
 
     #main-nav a {
