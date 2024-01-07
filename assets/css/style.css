@@ -3,6 +3,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #ffffff;
 }
 
 /* --------- Headings --------- */
@@ -14,6 +15,7 @@ h4,
 h5,
 h6 {
     font-family: Helvetica, Arial, sans-serif;
+    color: #007bff;
 }
 
 /* --------- Header --------- */
@@ -77,8 +79,7 @@ h1 {
     width: 100%;
 }
 
-#main-nav li {
-    /* margin-bottom: 10px;   */
+#main-nav li {    
     width: 100%;
     text-align: left;
 }
@@ -97,6 +98,53 @@ h1 {
 
 .hidden {
     display: none;
+}
+
+/* Welcome Section */
+.quiz-intro {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    /* Optional: if you want a different background */
+}
+
+.quiz-intro h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    /* Larger than your other h2 for emphasis */
+    color: #007bff;
+    /* Style it according to your color scheme */
+}
+
+.quiz-intro p {
+    font-size: 18px;
+    color: #333;
+    /* A standard text color */
+}
+
+/* Main - Category Buttons */
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    /* You already have padding here */
+}
+
+.category-btn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.category-btn:hover {
+    background-color: #218838;
 }
 
 /* Larger screens */
