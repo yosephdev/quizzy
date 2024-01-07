@@ -23,6 +23,7 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
       - [Desktop Header](#desktop-header)
       - [Mobile Header](#mobile-header)
       - [Navigation Menu](#navigation-menu)
+      - [Main Menu](#main-menu)
   - [Planned Features](#planned-features)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
@@ -115,10 +116,6 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 - **Responsive Header**: A responsive header that adjusts to screen size for optimal user experience. It features the app's title and a profile icon, which is displayed on desktop views. On mobile views, a menu toggle is provided for navigation.
 
-- **Interactive Navigation Menu**: A fully functional navigation menu that adapts to both desktop and mobile views. On desktop, the navigation items are displayed across the header, while on mobile, a hamburger menu icon reveals a dropdown menu for navigating the site. Smooth scrolling is implemented for a better user experience when navigating to different page sections.
-
-- **Accessibility**: Initial steps have been taken to ensure the app is accessible, following WCAG guidelines. This includes semantic HTML, appropriate aria-labels, and keyboard-navigable components.
-
 #### Desktop Header
 
 ![Desktop Header](docs/header-desktop.png "Desktop Header")
@@ -127,6 +124,8 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 ![Mobile Header](docs/header-mobile.jpg "Mobile Header")
 
+- **Interactive Navigation Menu**: A fully functional navigation menu that adapts to both desktop and mobile views. On desktop, the navigation items are displayed across the header, while on mobile, a hamburger menu icon reveals a dropdown menu for navigating the site. Smooth scrolling is implemented for a better user experience when navigating to different page sections.
+
 #### Navigation Menu
 
 - **Desktop Navigation**: The navigation items are centered in the header for a balanced and aesthetic appearance.
@@ -134,6 +133,20 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 ![Desktop Navigation](docs/desktop-navigation.jpg "Desktop Navigation")
 ![Mobile Navigation](docs/mobile-navigation.jpg "Mobile Navigation")
+
+#### Main Menu
+
+- **Welcome Section**: A welcoming introduction at the top of the main page that includes a prominent title and a brief description inviting users to engage with the quizzes.
+
+- **Category Selection**: Users are presented with a selection of quiz categories represented by visually appealing buttons. Clicking on a category button leads to the corresponding quiz, offering a straightforward way for users to choose their desired quiz topic.
+
+![Desktop Category](docs/category-desktop.png "Desktop Header")
+
+![Mobile Category](docs/category-mobile.jpg "Mobile Header")
+
+- **Accessibility**: Initial steps have been taken to ensure the app is accessible, following WCAG guidelines. This includes semantic HTML, appropriate aria-labels, and keyboard-navigable components.
+
+
 
 [Back to Top](#table-of-contents)
 
