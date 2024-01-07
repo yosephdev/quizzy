@@ -7,15 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
         mainNav.classList.toggle('hidden');
     });
 
-    // Smooth scroll and hide the menu
+    // Smooth scroll for internal links only
     document.querySelectorAll('#main-nav a').forEach(link => {
         link.addEventListener('click', function (event) {
+            // Check if the link is internal
             if (this.getAttribute('href').startsWith('#')) {
                 event.preventDefault();
+
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                mainNav.classList.add('hidden');
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    mainNav.classList.add('hidden');
+                }
             }
         });
     });
