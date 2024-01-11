@@ -209,6 +209,7 @@ The live site is accessible at [https://yosephdev.github.io/quizzy/](https://yos
 ## Code Inspiration, Help, and Advice
 
 - [Simen Daehlin](https://github.com/Eventyret) for guidance and project ideas.
+- [Mitko Bachvarov](https://www.linkedin.com/in/mitko-bachvarov-40b50776/) for guidance and feedback.
 - Thanks to Open Trivia Database for providing the quiz questions.
 
 ## Resources
