@@ -136,7 +136,7 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 ## Reflections and Challenges Encountered
 
-During development, we encountered challenges such as ensuring cross-browser compatibility and maintaining a responsive design. We learned the importance of thorough testing and incremental development.
+During development, I encountered challenges such as ensuring cross-browser compatibility and maintaining a responsive design. I learned the importance of thorough testing and incremental development.
 
 ## Future Improvements
 
@@ -150,9 +150,9 @@ During development, we encountered challenges such as ensuring cross-browser com
 
 ## Languages
 
-- **HTML**: For structuring the web app.
-- **CSS**: For styling the app.
-- **JavaScript**: For interactive elements and API integration.
+- [HTML](https://en.wikipedia.org/wiki/HTML "HTML") - For structuring the web app.
+- [CSS](https://en.wikipedia.org/wiki/CSS "CSS") - For styling the app.
+- [JS](https://en.wikipedia.org/wiki/JS "JS") - For interactive elements and API integration.
 
 ## Tools
 
