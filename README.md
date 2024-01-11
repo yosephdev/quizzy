@@ -2,6 +2,8 @@
 
 Welcome to the Online Quiz App, an interactive platform for testing and improving knowledge in various fields. This app utilizes the Open Trivia Database (<https://opentdb.com/>) to provide a diverse range of quiz questions. Designed as a school project, it aims to offer an engaging user experience using standard web technologies: HTML, CSS, and JavaScript.
 
+![Check out how Quizzy looks on different devices](assets/images/Responsive-mockup.png)
+
 ## Table of Contents
 
 - [Online Quiz App](#online-quiz-app)
@@ -19,22 +21,24 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
     - [Mobile Wireframe](#mobile-wireframe)
     - [Desktop Wireframe](#desktop-wireframe)
 - [Features](#features)
-  - [Existing Features](#existing-features)
-      - [Desktop Header](#desktop-header)
-      - [Mobile Header](#mobile-header)
-      - [Navigation Menu](#navigation-menu)
-      - [Main Menu](#main-menu)
+  - [Completed Features](#completed-features)
+  - [Work-in-Progress Features](#work-in-progress-features)
   - [Planned Features](#planned-features)
+  - [Reflections and Challenges Encountered](#reflections-and-challenges-encountered)
+  - [Future Improvements](#future-improvements)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
   - [Tools](#tools)
 - [Testing](#testing)
   - [Functionality](#functionality)
+  - [HTML](#html)
+  - [CSS](#css)
+  - [Accessbility](#accessbility)
   - [Usability](#usability)
   - [Accessibility](#accessibility)
 - [Deployment](#deployment)
 - [Credits](#credits)
-  - [Acknowledgments](#acknowledgments)
+  - [Code Inspiration, Help, and Advice](#code-inspiration-help-and-advice)
   - [Resources](#resources)
 
 [Back to Top](#table-of-contents)
@@ -112,52 +116,35 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 # Features
 
-## Existing Features
+## Completed Features
 
-- **Responsive Header**: A responsive header that adjusts to screen size for optimal user experience. It features the app's title and a profile icon, which is displayed on desktop views. On mobile views, a menu toggle is provided for navigation.
+- **Responsive Header**: A header that adjusts to the device's screen size, ensuring a consistent experience across different devices.
+- **Interactive Navigation Menu**: Navigation is smooth and intuitive, working well on both desktop and mobile devices.
+- **Welcome Section**: Provides a warm introduction and sets the stage for the quiz experience.
+- **Category Selection**: Allows users to choose from a range of topics, making the quiz experience diverse and customizable.
 
-#### Desktop Header
+## Work-in-Progress Features
 
-![Desktop Header](docs/header-desktop.png "Desktop Header")
-
-#### Mobile Header
-
-![Mobile Header](docs/header-mobile.jpg "Mobile Header")
-
-- **Interactive Navigation Menu**: A fully functional navigation menu that adapts to both desktop and mobile views. On desktop, the navigation items are displayed across the header, while on mobile, a hamburger menu icon reveals a dropdown menu for navigating the site. Smooth scrolling is implemented for a better user experience when navigating to different page sections.
-
-#### Navigation Menu
-
-- **Desktop Navigation**: The navigation items are centered in the header for a balanced and aesthetic appearance.
-- **Mobile Navigation**: The dropdown menu is easily accessible through the hamburger menu.
-
-![Desktop Navigation](docs/desktop-navigation.jpg "Desktop Navigation")
-![Mobile Navigation](docs/mobile-navigation.jpg "Mobile Navigation")
-
-#### Main Menu
-
-- **Welcome Section**: A welcoming introduction at the top of the main page that includes a prominent title and a brief description inviting users to engage with the quizzes.
-
-- **Category Selection**: Users are presented with a selection of quiz categories represented by visually appealing buttons. Clicking on a category button leads to the corresponding quiz, offering a straightforward way for users to choose their desired quiz topic.
-
-![Desktop Category](docs/category-desktop.png "Desktop Header")
-
-![Mobile Category](docs/category-mobile.jpg "Mobile Header")
-
-- **Accessibility**: Initial steps have been taken to ensure the app is accessible, following WCAG guidelines. This includes semantic HTML, appropriate aria-labels, and keyboard-navigable components.
-
-
-
-[Back to Top](#table-of-contents)
+- **Real-Time Quiz Interaction**: Some feedback mechanisms are in place, with plans to make this instant and more interactive.
+- **User Interface**: The current UI is clean and navigable, with ongoing enhancements to improve user engagement.
+- **Accessibility**: Efforts have been made to adhere to WCAG guidelines, with ongoing work to increase the app's accessibility.
 
 ## Planned Features
 
-- **Quiz Selection**: Users can choose from a variety of quiz categories and difficulty levels, sourced from the Open Trivia Database.
-- **Real-Time Quiz Interaction**: Immediate feedback is provided on answers, enhancing the learning experience.
-- **User Interface**: A clean and intuitive UI, ensuring ease of navigation for users of all ages.
-- **Leaderboards**: A leaderboard system to add a competitive edge, encouraging users to improve their scores.
-- **Social Sharing**: Integration of social media sharing options, enabling users to share their scores and challenge friends.
-- **Accessibility Enhancements**: Continued improvements to ensure the app is accessible to users with disabilities, adhering to WCAG guidelines.
+- **Leaderboards**: To introduce a competitive edge and motivate users to improve.
+- **Social Sharing**: To enable users to share scores and challenge friends, increasing the app's reach.
+
+## Reflections and Challenges Encountered
+
+During development, we encountered challenges such as ensuring cross-browser compatibility and maintaining a responsive design. We learned the importance of thorough testing and incremental development.
+
+## Future Improvements
+
+- **Enhanced Accessibility**: Further improvements to ensure the app is usable by people with disabilities.
+- **Quiz Variety and Customization**: Expand the question database and allow users to customize the quiz difficulty and type.
+- **Performance Optimization**: Improve the app's performance, especially on lower-end devices.
+
+[Back to Top](#table-of-contents)
 
 # Technologies Used
 
@@ -172,6 +159,8 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 - **Visual Studio Code**: As the code editor.
 - **Git**: For version control.
 - **GitHub**: For repository hosting.
+- [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML") - For validating HTML content.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS") - For validating CSS styles.
 
 # Testing
 
@@ -179,6 +168,20 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 - Cross-browser testing to ensure compatibility.
 - Mobile responsiveness testing.
+
+## HTML
+
+- No errors were returned when passing through the officail W3C validator.
+
+## CSS
+
+- No errors were returned when passing through the officail (Jigsaw) validator.
+
+## Accessbility
+
+- I confirmed that the colors and the fonts chosen are easy o read and accessible by running ti through the Lighthouse in DevTools.
+
+![Lighthouse report](assets/images/accessbility.png)
 
 ## Usability
 
@@ -190,14 +193,23 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 # Deployment
 
-Instructions for deploying the app will be provided here.
+Deploying the Quizzy website involved the following steps on GitHub Pages:
+
+1. Navigate to the GitHub repository and click **Settings**.
+2. Select **Pages** in the side navigation menu.
+3. Under **Source**, choose the **main** branch.
+4. Click **Save** to deploy the website.
+
+The live site is accessible at [https://yosephdev.github.io/quizzy](https://yosephdev.github.io/guizzy), automatically reflecting any committed updates.
+
+[Back to Top](#table-of-contents)
 
 # Credits
 
-## Acknowledgments
+## Code Inspiration, Help, and Advice
 
+- [Simen Daehlin](https://github.com/Eventyret) for guidance and project ideas.
 - Thanks to Open Trivia Database for providing the quiz questions.
-- Appreciation to teachers and students who will test the app.
 
 ## Resources
 
