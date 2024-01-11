@@ -181,7 +181,7 @@ During development, we encountered challenges such as ensuring cross-browser com
 
 - I confirmed that the colors and the fonts chosen are easy o read and accessible by running ti through the Lighthouse in DevTools.
 
-![Lighthouse report](assets/images/accessbility.png)
+![Lighthouse report](assets/images/accessbility.jpg)
 
 ## Usability
 
