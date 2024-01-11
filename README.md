@@ -200,7 +200,7 @@ Deploying the Quizzy website involved the following steps on GitHub Pages:
 3. Under **Source**, choose the **main** branch.
 4. Click **Save** to deploy the website.
 
-The live site is accessible at [https://yosephdev.github.io/quizzy](https://yosephdev.github.io/guizzy), automatically reflecting any committed updates.
+The live site is accessible at [https://yosephdev.github.io/quizzy/](https://yosephdev.github.io/quizzy/), automatically reflecting any committed updates.
 
 [Back to Top](#table-of-contents)
 
