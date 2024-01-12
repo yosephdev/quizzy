@@ -19,11 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Event listener for Start Quiz button
     document.getElementById("start-quiz").addEventListener("click", function () {
         this.classList.add("hidden");
-        document.getElementById("score-container").classList.remove("hidden");
-        document.getElementById("currentQuestion").classList.remove("hidden");
-        document.getElementById("answerChoices").classList.remove("hidden");
-        document.getElementById("progressBar-container").classList.remove("hidden");
-        displayQuestion(questions[currentQuestionIndex]);
+        setTimeout(() => {
+            document.getElementById("score-container").classList.remove("hidden");
+            document.getElementById("currentQuestion").classList.remove("hidden");
+            document.getElementById("answerChoices").classList.remove("hidden");
+            document
+                .getElementById("progressBar-container")
+                .classList.remove("hidden");
+            displayQuestion(questions[currentQuestionIndex]);
+        }, 300);
     });
 });
 
