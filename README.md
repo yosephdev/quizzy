@@ -30,11 +30,11 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
   - [Languages](#languages)
   - [Tools](#tools)
 - [Testing](#testing)
-  - [Functionality](#functionality)
+    - [Fixed Bugs](#fixed-bugs)
+    - [Unfixed Bugs](#unfixed-bugs)
+    - [Manual Testing](#manual-testing)
   - [HTML](#html)
   - [CSS](#css)
-  - [Accessbility](#accessbility)
-  - [Usability](#usability)
   - [Accessibility](#accessibility)
 - [Deployment](#deployment)
 - [Credits](#credits)
@@ -164,10 +164,26 @@ During development, I encountered challenges such as ensuring cross-browser comp
 
 # Testing
 
-## Functionality
+### Fixed Bugs
 
-- Cross-browser testing to ensure compatibility.
-- Mobile responsiveness testing.
+- **Main Navigation Issue**: The main navigation was not properly responding to user interactions. Resolved by updating JavaScript event listeners.
+- **Category Button Functionality**: Category buttons were not always triggering the quiz correctly. Fixed by ensuring correct data passing in `startQuiz` function.
+- **Progress Bar Misalignment**: Progress bar was inaccurately reflecting quiz progress. Corrected in the `updateProgressBar` function.
+
+### Unfixed Bugs
+
+- **Start Quiz Button Transition**: Currently, clicking "Start Quiz" does not smoothly transition to quiz questions. Improvement needed for user experience.
+- **Answer Selection and Question Flow**: After an answer is selected, the next question auto-appears without user confirmation. Plan to add a "Next Question" button for better control.
+- **Immediate Answer Feedback**: The app does not provide instant feedback on answer correctness before moving to the next question. Essential for enhancing the learning experience.
+
+### Manual Testing
+
+Manual testing was conducted to ensure the functionality and usability of the quiz app. Each feature was tested across different browsers and devices to guarantee a consistent user experience. The main areas of focus were:
+
+- **Navigation and Responsiveness**: Tested the navigation menu, category selection, and responsiveness of layout on various devices.
+- **Quiz Functionality**: Verified the quiz start process, question display, answer selection, and progression through questions.
+- **Score Tracking and Results Display**: Checked the accuracy of score tracking and the correct display of results upon quiz completion.
+- **User Interface Interactions**: Ensured buttons and links functioned correctly and provided the expected outcome.
 
 ## HTML
 
@@ -177,19 +193,11 @@ During development, I encountered challenges such as ensuring cross-browser comp
 
 - No errors were returned when passing through the officail (Jigsaw) validator.
 
-## Accessbility
+## Accessibility
 
 - I confirmed that the colors and the fonts chosen are easy o read and accessible by running ti through the Lighthouse in DevTools.
 
 ![Lighthouse report](assets/images/accessbility.jpg)
-
-## Usability
-
-- User testing to assess the ease of navigation and understanding.
-
-## Accessibility
-
-- Adhering to WCAG guidelines for accessibility.
 
 # Deployment
 
