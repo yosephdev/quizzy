@@ -252,6 +252,30 @@ function handleAnswerSelection(selectedAnswer, correctAnswer) {
   document.getElementById("next-question").classList.remove("hidden");
 }
 
+/**
+ * Moves to the next quiz question or ends the quiz if all questions are answered.
+ */
+function nextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        displayQuestion(questions[currentQuestionIndex]);
+        resetAnswerButtons();
+    } else {
+        endQuiz();
+    }
+}
+
+/**
+ * Resets the answer buttons to their initial state and hides the 'Next Question' button.
+ */
+function resetAnswerButtons() {
+    const answerButtons = document.querySelectorAll(".answer-button");
+    answerButtons.forEach((button) => {
+        button.disabled = false;
+        button.classList.remove("correct-answer", "incorrect-answer");
+    });
+    document.getElementById("next-question").classList.add("hidden");
+}
 
 /**
  * Ends the quiz, hides the quiz interface, and shows the results.
