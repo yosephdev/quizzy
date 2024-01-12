@@ -347,3 +347,4 @@ function chooseNewCategory() {
 
   document.getElementById("category-selection").classList.remove("hidden");
   document.getElementById("results").classList.add("hidden");
+}
