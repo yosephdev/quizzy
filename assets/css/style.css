@@ -58,43 +58,7 @@ header {
     cursor: pointer;
 }
 
-/* Navigation styles */
-#main-nav {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-
-#main-nav.open {
-    display: flex;
-    transform: translateX(0);
-}
-
-#main-nav ul {
-    list-style: none;
-    width: 100%;
-    padding: var(--spacing-medium);
-}
-
-#main-nav li a {
-    text-decoration: none;
-    color: white;
-    padding: var(--spacing-medium);
-    display: block;
-    font-size: var(--font-size-normal);
-}
-
-#main-nav li a:hover {
-    background-color: var(--primary-color-dark);
-}
-
+/* Quiz Intro section styles */
 .quiz-intro {
     background-color: var(--primary-color-light);    
     padding: 2rem;   
@@ -115,7 +79,6 @@ header {
     color: var(--primary-text-color);    
     font-size: 1.2rem;    
 }
-
 
 /* Quiz interface and category selection styles */
 #quiz-interface,

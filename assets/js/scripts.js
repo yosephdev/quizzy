@@ -1,13 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     // DOM elements
-    const menuToggle = document.getElementById("menu-toggle");
-    const mainNav = document.getElementById("main-nav");
+    const menuToggle = document.getElementById("menu-toggle");   
 
     // Event listeners for menu toggle and navigation links
-    menuToggle?.addEventListener("click", () => mainNav.classList.toggle("open"));
-    document.querySelectorAll("#main-nav a").forEach((link) => {
-        link.addEventListener("click", () => mainNav.classList.remove("open"));
-    });
+    menuToggle?.addEventListener("click", () => menuToggle.classList.toggle("open"));    
 
     // Event listeners for category buttons
     document.querySelectorAll(".category-btn").forEach((button) => {
