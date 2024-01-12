@@ -29,6 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
             displayQuestion(questions[currentQuestionIndex]);
         }, 300);
     });
+
+    // Event listener for Next Question button
+    document
+        .getElementById("next-question")
+        .addEventListener("click", function () {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion(questions[currentQuestionIndex]);
+                this.classList.add("hidden"); // Hide the Next Question button
+            } else {
+                endQuiz();
+            }
+        });
 });
 
 // Initialize quiz
@@ -230,14 +243,7 @@ function handleAnswerSelection(selectedAnswer, correctAnswer) {
         }
     });
 
-    setTimeout(() => {
-        if (currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
-            displayQuestion(questions[currentQuestionIndex]);
-        } else {
-            endQuiz();
-        }
-    }, 1000);
+    document.getElementById("next-question").classList.remove("hidden");
 }
 
 /**
