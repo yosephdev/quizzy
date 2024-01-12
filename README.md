@@ -2,7 +2,7 @@
 
 Welcome to the Online Quiz App, an interactive platform for testing and improving knowledge in various fields. This app utilizes the Open Trivia Database (<https://opentdb.com/>) to provide a diverse range of quiz questions. Designed as a school project, it aims to offer an engaging user experience using standard web technologies: HTML, CSS, and JavaScript.
 
-![Check out how Quizzy looks on different devices](assets/images/Responsive-mockup.png)
+![Check out how Quizzy looks on different devices](assets/images/responsive-mockup.png)
 
 ## Table of Contents
 
@@ -121,18 +121,20 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 - **Responsive Header**: A header that adjusts to the device's screen size, ensuring a consistent experience across different devices.
 - **Interactive Navigation Menu**: Navigation is smooth and intuitive, working well on both desktop and mobile devices.
 - **Welcome Section**: Provides a warm introduction and sets the stage for the quiz experience.
-- **Category Selection**: Allows users to choose from a range of topics, making the quiz experience diverse and customizable.
+- **Category Selection**: Users can choose from a range of topics, making the quiz experience diverse and customizable.
+- **Dynamic Quiz Interface**: The quiz adapts based on the selected category, with a smooth transition between questions.
+- **Instant Feedback Mechanism**: Users receive immediate feedback on their answers, enhancing the interactive experience.
+- **Score Tracking**: The app accurately tracks and displays the user's score throughout the quiz.
 
 ## Work-in-Progress Features
 
-- **Real-Time Quiz Interaction**: Some feedback mechanisms are in place, with plans to make this instant and more interactive.
-- **User Interface**: The current UI is clean and navigable, with ongoing enhancements to improve user engagement.
-- **Accessibility**: Efforts have been made to adhere to WCAG guidelines, with ongoing work to increase the app's accessibility.
+- **User Interface Improvements**: Ongoing enhancements to improve user engagement and interactivity.
+- **Accessibility Enhancements**: Continuous efforts to adhere to WCAG guidelines and increase the app's accessibility.
 
 ## Planned Features
 
 - **Leaderboards**: To introduce a competitive edge and motivate users to improve.
-- **Social Sharing**: To enable users to share scores and challenge friends, increasing the app's reach.
+- **Social Sharing**: Enabling users to share scores and challenge friends, thereby increasing the app's reach.
 
 ## Reflections and Challenges Encountered
 
@@ -152,7 +154,7 @@ During development, I encountered challenges such as ensuring cross-browser comp
 
 - [HTML](https://en.wikipedia.org/wiki/HTML "HTML") - For structuring the web app.
 - [CSS](https://en.wikipedia.org/wiki/CSS "CSS") - For styling the app.
-- [JS](https://en.wikipedia.org/wiki/JS "JS") - For interactive elements and API integration.
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript") - For interactive elements and API integration.
 
 ## Tools
 
@@ -187,15 +189,15 @@ Manual testing was conducted to ensure the functionality and usability of the qu
 
 ## HTML
 
-- No errors were returned when passing through the officail W3C validator.
+- No errors were returned when passing through the official W3C validator.
 
 ## CSS
 
-- No errors were returned when passing through the officail (Jigsaw) validator.
+- No errors were found when passing through the official (Jigsaw) validator.
 
 ## Accessibility
 
-- I confirmed that the colors and the fonts chosen are easy o read and accessible by running ti through the Lighthouse in DevTools.
+- I confirmed that the colors and the fonts chosen are easy to read and accessible by running it through the Lighthouse in DevTools.
 
 ![Lighthouse report](assets/images/accessbility.jpg)
 
