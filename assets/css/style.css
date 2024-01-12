@@ -40,44 +40,44 @@ header {
 
 /* Heading styles */
 .heading a {
-    text-decoration: none;    
-    color: var(--primary-text-color);    
-    font-size: 1.5rem;  
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-size: 1.5rem;
 }
 
 /* Profile Icon styles */
 .profile-icon {
-    font-size: 1.5rem;    
-    color: var(--primary-text-color);    
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
     cursor: pointer;
 }
 
 /* Menu Icon styles */
 .menu-icon {
-    font-size: 1.5rem;    
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
 /* Quiz Intro section styles */
 .quiz-intro {
-    background-color: var(--primary-color-light);    
-    padding: 2rem;   
-    text-align: center;  
-    border-radius: 10px;    
-    margin: 2rem auto;    
-    max-width: 800px;    
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    
+    background-color: var(--primary-color-light);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .quiz-intro h2 {
-    color: var(--primary-color-dark);    
-    margin-bottom: 1rem;    
-    font-size: 2rem;    
+    color: var(--primary-color-dark);
+    margin-bottom: 1rem;
+    font-size: 2rem;
 }
 
 .quiz-intro p {
-    color: var(--primary-text-color);    
-    font-size: 1.2rem;    
+    color: var(--primary-text-color);
+    font-size: 1.2rem;
 }
 
 /* Quiz interface and category selection styles */
@@ -204,6 +204,41 @@ button {
     background-color: #45a049;
 }
 
+/* Correct and Incorrect Answer Button Styles */
+.correct-answer {
+    background-color: #28a745;
+    /* Green color for correct answers */
+    color: white;
+}
+
+.incorrect-answer {
+    background-color: #dc3545;
+    /* Red color for incorrect answers */
+    color: white;
+}
+
+/* General Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Next Question styles */
+
+#next-question {
+    background-color: var(--primary-color-dark);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#next-question:hover {
+    background-color: var(--primary-color);
+}
+
 /* Results section styles */
 #results {
     background-color: white;
@@ -238,23 +273,6 @@ button {
 
     .menu-icon {
         display: none;
-    }
-
-    #main-nav {
-        all: unset;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: var(--spacing-large);
-    }
-
-    #main-nav ul {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #main-nav li a {
-        color: var(--primary-text-color);
     }
 
     #quiz-interface,
