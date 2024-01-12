@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     // DOM elements
-    const menuToggle = document.getElementById("menu-toggle");   
+    const menuToggle = document.getElementById("menu-toggle");
 
-    // Event listeners for menu toggle and navigation links
-    menuToggle?.addEventListener("click", () => menuToggle.classList.toggle("open"));    
+    // Event listeners for menu toggle
+    menuToggle?.addEventListener("click", () =>
+        menuToggle.classList.toggle("open")
+    );
 
     // Event listeners for category buttons
     document.querySelectorAll(".category-btn").forEach((button) => {
@@ -14,23 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Event listener for Start Quiz button - Show quiz elements and display the first question
+    // Event listener for Start Quiz button
     document.getElementById("start-quiz").addEventListener("click", function () {
-        this.classList.add("hidden"); // Hide the Start Quiz button
-        document.getElementById("score-container").classList.remove("hidden"); // Show score container
-        document.getElementById("currentQuestion").classList.remove("hidden"); // Show current question
-        document.getElementById("answerChoices").classList.remove("hidden"); // Show answer choices
-        document.getElementById("progressBar-container").classList.remove("hidden"); // Show progress bar
-        displayQuestion(questions[currentQuestionIndex]); // Display the first question
-    });
-
-    document.getElementById("start-quiz").addEventListener("click", function () {
-        this.classList.add("hidden"); // Hide the Start Quiz button
-        document.getElementById("score-container").classList.remove("hidden"); // Show score container
-        document.getElementById("currentQuestion").classList.remove("hidden"); // Show current question
-        document.getElementById("answerChoices").classList.remove("hidden"); // Show answer choices
-        document.getElementById("progressBar-container").classList.remove("hidden"); // Show progress bar
-        displayQuestion(questions[currentQuestionIndex]); // Display the first question
+        this.classList.add("hidden");
+        document.getElementById("score-container").classList.remove("hidden");
+        document.getElementById("currentQuestion").classList.remove("hidden");
+        document.getElementById("answerChoices").classList.remove("hidden");
+        document.getElementById("progressBar-container").classList.remove("hidden");
+        displayQuestion(questions[currentQuestionIndex]);
     });
 });
 
@@ -46,7 +39,6 @@ let currentCategory = "";
  * @returns {number} The ID corresponding to the given category name.
  */
 function getCategoryId(categoryName) {
-    // Mapping of category names to their respective category IDs
     const categories = {
         Science: 17,
         Math: 19,
@@ -58,7 +50,6 @@ function getCategoryId(categoryName) {
         Sports: 21,
     };
 
-    // Return the category ID for the given category name or default to Science (ID 17) if not found
     return categories[categoryName] || 17;
 }
 
@@ -83,7 +74,6 @@ async function startQuiz(category) {
         const categorySelection = document.getElementById("category-selection");
 
         if (questions.length > 0) {
-            // Hide the Start Quiz button now that the quiz is starting
             document.getElementById("start-quiz").classList.remove("hidden"); // Show start button
             quizInterface.classList.remove("hidden");
             categorySelection.classList.add("hidden");
@@ -113,20 +103,16 @@ async function fetchQuestions(categoryName) {
     const apiURL = `https://opentdb.com/api.php?amount=10&category=${categoryId}&type=multiple`;
 
     try {
-        // Fetch questions from the API
         const response = await fetch(apiURL);
         const data = await response.json();
 
-        // Check if the API call was successful and return the results
         if (data.response_code === 0) {
             return data.results;
         } else {
-            // Log an error if the API response is not successful
             console.error("API response error: ", data);
             return [];
         }
     } catch (error) {
-        // Log any fetch errors
         console.error("Fetch error: ", error);
         return [];
     }
@@ -136,7 +122,6 @@ async function fetchQuestions(categoryName) {
  * Updates the progress bar based on the current progress of the quiz.
  */
 function updateProgressBar() {
-    // Retrieve the progress bar element from the DOM
     const progressBar = document.getElementById("progress-bar");
 
     if (!progressBar) {
@@ -144,11 +129,8 @@ function updateProgressBar() {
         return;
     }
 
-    // Calculate the progress percentage based on the current question index and total questions
     const progressPercentage =
         ((currentQuestionIndex + 1) / questions.length) * 100;
-
-    // Update the width of the progress bar to reflect the current progress
     progressBar.style.width = `${progressPercentage}%`;
 }
 
@@ -160,7 +142,6 @@ function displayQuestion(question) {
     const currentQuestionElement = document.getElementById("currentQuestion");
     const answerChoicesContainer = document.getElementById("answerChoices");
 
-    // Make sure the elements are found in the DOM
     if (!currentQuestionElement || !answerChoicesContainer) {
         console.error(
             "Required elements for displaying the question are not found in the DOM"
@@ -168,24 +149,19 @@ function displayQuestion(question) {
         return;
     }
 
-    // Set the question text, decoding any HTML entities
     currentQuestionElement.innerHTML = decodeHtml(question.question);
 
-    // Clear any previous answer choices
     answerChoicesContainer.innerHTML = "";
 
-    // Combine correct and incorrect answers, and shuffle them
     const answers = shuffleArray([
         question.correct_answer,
         ...question.incorrect_answers,
     ]);
 
     const choiceLetters = ["A", "B", "C", "D"];
-    // Create a button for each answer
     answers.forEach((answer, index) => {
         const answerButton = document.createElement("button");
         answerButton.className = "answer-button";
-        // Prepend the choice letter
         answerButton.textContent = `${choiceLetters[index]}. ${decodeHtml(answer)}`;
         answerButton.addEventListener("click", () =>
             handleAnswerSelection(answer, question.correct_answer)
@@ -193,13 +169,11 @@ function displayQuestion(question) {
         answerChoicesContainer.appendChild(answerButton);
     });
 
-    // Show the elements for the current question
     document.getElementById("score-container").classList.remove("hidden");
     document.getElementById("currentQuestion").classList.remove("hidden");
     document.getElementById("answerChoices").classList.remove("hidden");
     document.getElementById("progressBar-container").classList.remove("hidden");
 
-    // Update the progress bar to reflect the new question
     updateProgressBar();
 }
 
@@ -233,41 +207,33 @@ function shuffleArray(array) {
  * @param {string} correctAnswer - The correct answer for the current question.
  */
 function handleAnswerSelection(selectedAnswer, correctAnswer) {
-    // Retrieve all answer buttons and the current score display element
     const answerButtons = document.querySelectorAll(".answer-button");
     const currentScoreElement = document.getElementById("currentScore");
 
     answerButtons.forEach((button) => {
-        // Disable all buttons to prevent further selections
         button.disabled = true;
 
-        // Highlight the selected answer
         if (button.textContent === selectedAnswer) {
             if (selectedAnswer === correctAnswer) {
-                // Increment score and update display if the answer is correct
                 score++;
                 if (currentScoreElement) {
                     currentScoreElement.textContent = `${score}`;
                 }
                 button.classList.add("correct-answer");
             } else {
-                // Mark as incorrect if the answer is wrong
                 button.classList.add("incorrect-answer");
             }
         }
     });
 
-    // Set a timeout to proceed to the next question or end the quiz
     setTimeout(() => {
         if (currentQuestionIndex < questions.length - 1) {
-            // Increment index and display the next question if more questions are available
             currentQuestionIndex++;
             displayQuestion(questions[currentQuestionIndex]);
         } else {
-            // End the quiz if all questions have been answered
             endQuiz();
         }
-    }, 1000); // Delay for 1 second before moving on
+    }, 1000);
 }
 
 /**
@@ -277,22 +243,14 @@ function endQuiz() {
     const quizInterface = document.getElementById("quiz-interface");
     const resultsSection = document.getElementById("results");
 
-    // Hide the quiz interface
-    // quizInterface.classList.add("hidden");
-
-    // Show the results section with the user's score
-    // resultsSection.classList.remove("hidden");
-
     if (quizInterface && resultsSection) {
         quizInterface.classList.add("hidden");
         resultsSection.classList.remove("hidden");
 
-        // Update results content
         resultsSection.innerHTML = `<h2>You got ${score} out of ${questions.length}. Well done!</h2>
-                              <button id="retake-quiz">Retake Quiz</button>
-                              <button id="choose-new-category">Choose New Category</button>`;
+    <button id="retake-quiz">Retake Quiz</button>
+    <button id="choose-new-category">Choose New Category</button>`;
 
-        // Attach Event Listeners to Result Buttons
         document
             .getElementById("retake-quiz")
             .addEventListener("click", retakeQuiz);
@@ -306,24 +264,20 @@ function endQuiz() {
  * Resets the quiz to its initial state, clearing the previous questions and resetting the score.
  */
 function resetQuiz() {
-    // Resetting score and question index
     score = 0;
     currentQuestionIndex = 0;
     questions = [];
 
-    // Update the displayed score to 0
     const scoreElement = document.getElementById("currentScore");
     if (scoreElement) {
         scoreElement.textContent = `Score: ${score}`;
     }
 
-    // Hide the progress bar container as we are resetting the quiz
     const progressBarContainer = document.getElementById("progressBar-container");
     if (progressBarContainer) {
         progressBarContainer.classList.add("hidden");
     }
 
-    // Clear the content of the current question and answer choices
     const currentQuestionElement = document.getElementById("currentQuestion");
     const answerChoicesContainer = document.getElementById("answerChoices");
     if (currentQuestionElement && answerChoicesContainer) {
@@ -336,10 +290,8 @@ function resetQuiz() {
  * Handles the retaking of the quiz. Resets the quiz and starts it again with the same category.
  */
 function retakeQuiz() {
-    // Reset the quiz to its initial state
     resetQuiz();
 
-    // Start the quiz again with the same category that was previously selected
     startQuiz(currentCategory);
 }
 
@@ -347,14 +299,11 @@ function retakeQuiz() {
  * Handles the action of choosing a new category after a quiz is completed or during a quiz.
  */
 function chooseNewCategory() {
-    // Reset the quiz to its initial state
     resetQuiz();
 
-    // Hide the start button and score container elements
     document.getElementById("start-quiz").classList.add("hidden");
     document.getElementById("score-container").classList.add("hidden");
 
-    // Show the category selection section and hide the results section
     document.getElementById("category-selection").classList.remove("hidden");
     document.getElementById("results").classList.add("hidden");
 }
