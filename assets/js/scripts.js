@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // DOM elements
   const menuToggle = document.getElementById("menu-toggle");
-  const currentQuestionElement = document.getElementById("currentQuestion"); 
-  
+  const currentQuestionElement = document.getElementById("currentQuestion");
 
   // Event listeners for menu toggle
   menuToggle?.addEventListener("click", () =>
@@ -18,19 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Event listener for Start Quiz button
-  document.getElementById("start-quiz").addEventListener("click", function () {  
+  document.getElementById("start-quiz").addEventListener("click", function () {
     document.querySelector(".quiz-intro").classList.add("hidden");
     document.getElementById("category-selection").classList.add("hidden");
     this.classList.add("hidden");
-   
+
     currentQuestionIndex = 0;
     score = 0;
-    
+
     currentQuestionElement.classList.remove("hidden");
     document.getElementById("score-container").classList.remove("hidden");
     document.getElementById("answerChoices").classList.remove("hidden");
     document.getElementById("progressBar-container").classList.remove("hidden");
-    
+
     displayQuestion(questions[currentQuestionIndex]);
   });
 
@@ -47,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Initialize quiz 
-let questions = []; 
+// Initialize quiz
+let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let currentCategory = "";
@@ -82,9 +81,9 @@ async function startQuiz(category) {
     alert("Please select a category first.");
     return;
   }
-  
-   document.querySelector(".quiz-intro").classList.add("hidden");  
-   document
+
+  document.querySelector(".quiz-intro").classList.add("hidden");
+  document
     .querySelectorAll(".instructions")
     .forEach((el) => el.classList.add("hidden"));
 
@@ -99,7 +98,7 @@ async function startQuiz(category) {
     const categorySelection = document.getElementById("category-selection");
 
     if (questions.length > 0) {
-      document.getElementById("start-quiz").classList.remove("hidden"); 
+      document.getElementById("start-quiz").classList.remove("hidden");
       quizInterface.classList.remove("hidden");
       categorySelection.classList.add("hidden");
     } else {
@@ -120,9 +119,9 @@ async function startQuiz(category) {
  * @param {string} categoryName - The name of the selected quiz category.
  * @returns {Promise<Object[]>} - A promise that resolves to an array of question objects.
  */
-async function fetchQuestions(categoryName) {  
+async function fetchQuestions(categoryName) {
   const categoryId = getCategoryId(categoryName);
-  
+
   const apiURL = `https://opentdb.com/api.php?amount=10&category=${categoryId}&type=multiple`;
 
   try {
@@ -256,25 +255,25 @@ function handleAnswerSelection(selectedAnswer, correctAnswer) {
  * Moves to the next quiz question or ends the quiz if all questions are answered.
  */
 function nextQuestion() {
-    if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        displayQuestion(questions[currentQuestionIndex]);
-        resetAnswerButtons();
-    } else {
-        endQuiz();
-    }
+  if (currentQuestionIndex < questions.length - 1) {
+    currentQuestionIndex++;
+    displayQuestion(questions[currentQuestionIndex]);
+    resetAnswerButtons();
+  } else {
+    endQuiz();
+  }
 }
 
 /**
  * Resets the answer buttons to their initial state and hides the 'Next Question' button.
  */
 function resetAnswerButtons() {
-    const answerButtons = document.querySelectorAll(".answer-button");
-    answerButtons.forEach((button) => {
-        button.disabled = false;
-        button.classList.remove("correct-answer", "incorrect-answer");
-    });
-    document.getElementById("next-question").classList.add("hidden");
+  const answerButtons = document.querySelectorAll(".answer-button");
+  answerButtons.forEach((button) => {
+    button.disabled = false;
+    button.classList.remove("correct-answer", "incorrect-answer");
+  });
+  document.getElementById("next-question").classList.add("hidden");
 }
 
 /**
@@ -283,15 +282,28 @@ function resetAnswerButtons() {
 function endQuiz() {
   const quizInterface = document.getElementById("quiz-interface");
   const resultsSection = document.getElementById("results");
+  const resultsText = document.getElementById("results-text");
 
   if (quizInterface && resultsSection) {
     quizInterface.classList.add("hidden");
     resultsSection.classList.remove("hidden");
-
-    resultsSection.innerHTML = `<h2>You got ${score} out of ${questions.length}. Well done!</h2>
+    
+    let feedbackMessage;
+    if (score / questions.length === 1) {
+      feedbackMessage = "Perfect score! You're a trivia master!";
+    } else if (score / questions.length >= 0.7) {
+      feedbackMessage = "Great job! You have a strong grasp on these topics.";
+    } else if (score / questions.length >= 0.5) {
+      feedbackMessage = "Not bad! A little more study and you'll be on top.";
+    } else {
+      feedbackMessage = "Keep practicing and you'll improve.";
+    }
+    
+    resultsSection.innerHTML = `<h2>Your Results</h2>
+    <p id="results-text">You got ${score} out of ${questions.length}. ${feedbackMessage}</p>
     <button id="retake-quiz">Retake Quiz</button>
     <button id="choose-new-category">Choose New Category</button>`;
-
+    
     document
       .getElementById("retake-quiz")
       .addEventListener("click", retakeQuiz);
@@ -299,7 +311,10 @@ function endQuiz() {
       .getElementById("choose-new-category")
       .addEventListener("click", chooseNewCategory);
   }
+  resetQuiz();
 }
+
+
 
 /**
  * Resets the quiz to its initial state, clearing the previous questions and resetting the score.
