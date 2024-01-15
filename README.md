@@ -24,6 +24,7 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
   - [Completed Features](#completed-features)
   - [Work-in-Progress Features](#work-in-progress-features)
   - [Planned Features](#planned-features)
+  - [Recent Changes](#recent-changes)
   - [Reflections and Challenges Encountered](#reflections-and-challenges-encountered)
   - [Future Improvements](#future-improvements)
 - [Technologies Used](#technologies-used)
@@ -136,6 +137,14 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 - **Leaderboards**: To introduce a competitive edge and motivate users to improve.
 - **Social Sharing**: Enabling users to share scores and challenge friends, thereby increasing the app's reach.
 
+## Recent Changes
+
+- **Bug Fixes**: Several bugs related to navigation, category selection, and progress bar alignment have been fixed.
+- **UI Enhancements**: The user interface has been improved to provide a better user experience.
+- **Next Question Button Behavior**: The "Next Question" button now appears only when an answer is selected.
+- **Retake Quiz and Choose New Category**: Improved the behavior of these buttons after completing a quiz.
+- **Accessibility Improvements**: Efforts have been made to ensure accessibility, as shown in the Lighthouse report.
+
 ## Reflections and Challenges Encountered
 
 During development, I encountered challenges such as ensuring cross-browser compatibility and maintaining a responsive design. I learned the importance of thorough testing and incremental development.
@@ -171,11 +180,11 @@ During development, I encountered challenges such as ensuring cross-browser comp
 - **Main Navigation Issue**: The main navigation was not properly responding to user interactions. Resolved by updating JavaScript event listeners.
 - **Category Button Functionality**: Category buttons were not always triggering the quiz correctly. Fixed by ensuring correct data passing in `startQuiz` function.
 - **Progress Bar Misalignment**: Progress bar was inaccurately reflecting quiz progress. Corrected in the `updateProgressBar` function.
+- **Start Quiz Button Transition**: Clicking "Start Quiz" now smoothly transitions to quiz questions, improving user experience.
+- **Answer Selection and Question Flow**: After an answer is selected, there is now a "Next Question" button for better control over question progression.
 
 ### Unfixed Bugs
 
-- **Start Quiz Button Transition**: Currently, clicking "Start Quiz" does not smoothly transition to quiz questions. Improvement needed for user experience.
-- **Answer Selection and Question Flow**: After an answer is selected, the next question auto-appears without user confirmation. Plan to add a "Next Question" button for better control.
 - **Immediate Answer Feedback**: The app does not provide instant feedback on answer correctness before moving to the next question. Essential for enhancing the learning experience.
 
 ### Manual Testing
