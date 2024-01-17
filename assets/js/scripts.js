@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentQuestionElement = document.getElementById("currentQuestion");
 
     /**
-     * Add event listener for menu toggle, category buttons, Start Quiz button and Next Question button
+     * Add event listener for menu toggle, category buttons, Start Quiz button, Next Question button and Retake Quiz button
      */
     menuToggle?.addEventListener("click", () =>
         menuToggle.classList.toggle("open")
@@ -39,6 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         displayQuestion(questions[currentQuestionIndex]);
     });
+
+    document
+        .getElementById("retake-quiz-intro")
+        .addEventListener("click", retakeQuiz);
+    document
+        .getElementById("retake-quiz-results")
+        .addEventListener("click", retakeQuiz);
 
     document
         .getElementById("next-question")
@@ -102,6 +109,7 @@ async function startQuiz(category) {
 
         if (questions.length > 0) {
             document.getElementById("start-quiz").classList.remove("hidden");
+            document.getElementById("retake-quiz-intro").classList.remove("hidden");
             quizInterface.classList.remove("hidden");
             categorySelection.classList.add("hidden");
         } else {
@@ -115,6 +123,7 @@ async function startQuiz(category) {
         console.error("Error fetching questions:", error);
         alert("An error occurred while fetching quiz questions. Please try again.");
     }
+    document.getElementById("retake-quiz-results").classList.remove("hidden");
 }
 
 /**
@@ -294,17 +303,18 @@ function endQuiz() {
 
         resultsSection.innerHTML = `<h2>Your Results</h2>
     <p id="results-text">You got ${score} out of ${questions.length}. ${feedbackMessage}</p>
-    <button id="retake-quiz">Retake Quiz</button>
+    <button id="retake-quiz-results">Retake Quiz</button>
     <button id="choose-new-category">Choose New Category</button>`;
 
         document
-            .getElementById("retake-quiz")
+            .getElementById("retake-quiz-results")
             .addEventListener("click", retakeQuiz);
         document
             .getElementById("choose-new-category")
             .addEventListener("click", chooseNewCategory);
     }
     resetQuiz();
+    document.getElementById("retake-quiz-intro").classList.add("hidden");
 }
 
 /**
@@ -331,6 +341,8 @@ function resetQuiz() {
         currentQuestionElement.textContent = "";
         answerChoicesContainer.innerHTML = "";
     }
+
+    document.getElementById("retake-quiz-intro").classList.add("hidden");
 }
 
 /**
@@ -357,6 +369,8 @@ function retakeQuiz() {
     }
 
     startQuiz(currentCategory);
+    document.getElementById("retake-quiz-intro").classList.add("hidden");
+    document.getElementById("retake-quiz-results").classList.add("hidden");
 }
 
 /**
