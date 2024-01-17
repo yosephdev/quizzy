@@ -101,6 +101,36 @@ header {
     display: none;
 }
 
+#retake-quiz-intro {
+    padding: 10px 2.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 2rem;
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#retake-quiz-intro:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+#retake-quiz-intro:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #3e8e41;
+}
+
+
 /* Instructions paragraph styles */
 .instructions {
     font-size: var(--font-size-normal);
