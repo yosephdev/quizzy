@@ -4,13 +4,12 @@ The Online Quiz App is an interactive platform designed to provide users with a 
 
 ![Check out how Quizzy looks on different devices](assets/images/responsive-mockup.png)
 
+[Check out how Quizzy looks like here](https://yosephdev.github.io/quizzy/)
+
 ## Table of Contents
 
 - [Online Quiz App](#online-quiz-app)
   - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-    - [Current Features](#current-features)
-    - [Features to Be Implemented](#features-to-be-implemented)
   - [User Experience (UX)](#user-experience-ux)
     - [User Goals](#user-goals)
     - [User Stories](#user-stories)
@@ -22,6 +21,9 @@ The Online Quiz App is an interactive platform designed to provide users with a 
   - [Wireframes](#wireframes)
     - [Mobile Wireframe](#mobile-wireframe)
     - [Desktop Wireframe](#desktop-wireframe)
+  - [Features](#features)
+    - [Current Features](#current-features)
+    - [Features to Be Implemented](#features-to-be-implemented)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
   - [Tools](#tools)
@@ -33,30 +35,15 @@ The Online Quiz App is an interactive platform designed to provide users with a 
     - [Lighthouse Report](#lighthouse-report)
   - [Reflections and Challenges Encountered](#reflections-and-challenges-encountered)
   - [Deployment](#deployment)
+    - [GitHub Pages Deployment](#github-pages-deployment)
+    - [Forking the GitHub Repository](#forking-the-github-repository)
+    - [Local Clone](#local-clone)
   - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
     - [Acknowledgments](#acknowledgments)
 
 [Back to Top](#table-of-contents)
-
-## Features
-
-### Current Features
-
-- **Header**: Showcasing the app's name and navigational cues.
-  ![Online Quiz App Header](assets/images/header-mockup.png)
-  
-- **Game Options**: Users can select from various quiz categories.
-  ![Game Options](assets/images/game-options-mockup.png)
-  
-- **Game Results**: Instant feedback on answers and score tracking.
-  ![Game Results](assets/images/game-results-mockup.png)
-
-### Features to Be Implemented
-
-- **Additional Question Types**: Planning to expand the question types to include more formats such as true/false and multiple-choice.
-- **User Accounts**: Intend to allow users to create accounts to save their progress and scores.
 
 ## User Experience (UX)
 
@@ -116,6 +103,31 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 [Back to Top](#table-of-contents)
 
+## Features
+
+### Current Features
+
+- **Header**: Showcasing the app's name and navigational cues.
+  ![Online Quiz App Header](assets/images/header-mockup.png)
+
+- **Category Selection**: Users can select from various quiz categories, making the quiz experience diverse and customizable.
+  ![Game Options](assets/images/game-options-mockup.png)  
+  
+- **Dynamic Quiz Interface**: The quiz adapts based on the selected category, with a smooth transition between questions.
+  ![Game Rules](assets/images/game-rules-mockup.png)
+  
+- **Instant Feedback Mechanism**: Users receive immediate feedback on their answers, enhancing the interactive experience.
+  ![Game Feedback](assets/images/game-answer-mockup.png)
+  
+- **Score Tracking**: The app accurately tracks and displays the user's score throughout the quiz.
+- ![Game Results](assets/images/game-results-mockup.png)
+
+### Features to Be Implemented
+
+- **Leaderboards**: To introduce a competitive edge and motivate users to improve.
+- **Social Sharing**: Enabling users to share scores and challenge friends, thereby increasing the app's reach.
+- **User Accounts**: Intend to allow users to create accounts to save their progress and scores.
+
 # Technologies Used
 
 ## Languages
@@ -155,10 +167,13 @@ Testing has been a critical part of developing the Online Quiz App to ensure fun
 
 Manual testing was performed extensively to ensure all features worked as expected. This involved:
 
-- **Navigation and Responsiveness**: Ensuring that the navigation menu and category selection are functional across various devices.
-- **Quiz Functionality**: Testing the quiz start process, question display, answer selection, and question progression.
-- **Score Tracking and Results**: Verifying the accuracy of the score tracking and the correct display of results upon quiz completion.
-- **User Interface**: Confirming that buttons and links function as expected.
+- **Navigation and Responsiveness**: Testing involved checking the navigation menu, category selection, and the responsiveness of the layout on various devices and screen sizes.
+
+- **Quiz Functionality**: The start process of the quiz, question display mechanics, answer selection, and progression through the quiz were verified for consistency and accuracy.
+
+- **Score Tracking and Results Display**: The score tracking mechanism and the correct display of results at the end of the quiz were tested to ensure accurate feedback to the user.
+
+- **User Interface Interactions**: All buttons and links were tested to ensure they functioned correctly and provided the expected outcomes, enhancing the overall user experience.
 
 ## HTML
 
@@ -180,12 +195,51 @@ During development, I encountered challenges such as ensuring cross-browser comp
 
 ## Deployment
 
-The Online Quiz App is hosted on GitHub Pages:
+The Online Quiz App is hosted on GitHub Pages. To deploy the app and work on it locally, follow these steps:
 
-1. Navigate to the GitHub repository settings.
-2. Select the 'Pages' section.
-3. Choose the 'main' branch as the source.
-4. Access the live site at [https://yosephdev.github.io/quizzy/](https://yosephdev.github.io/quizzy/).
+### GitHub Pages Deployment
+
+1. Log in to GitHub and locate the GitHub repository for the Online Quiz App.
+
+2. At the top of the repository (not the main navigation), find the "Settings" button in the menu.
+
+3. Scroll down the Settings page until you locate the "GitHub Pages" section.
+
+4. Under "Source," click the dropdown menu that says "None" and select the "Main" branch, then click "Save."
+
+5. The page will automatically refresh.
+
+6. Scroll back down to locate the now-published site link in the "GitHub Pages" section. You can access the live site at [https://yosephdev.github.io/quizzy/](https://yosephdev.github.io/quizzy/).
+
+### Forking the GitHub Repository
+
+By forking the repository, you can create a copy of the original repository on your GitHub account to view and make changes without affecting the original repository. Follow these steps:
+
+1. Log in to GitHub and locate the GitHub repository for the Online Quiz App.
+
+2. At the top of the repository (under the main navigation), find the "Fork" button.
+
+3. Click the "Fork" button to create a copy of the original repository in your GitHub account.
+
+### Local Clone
+
+To work on the Online Quiz App locally, you can clone the GitHub repository to your computer using these steps:
+
+1. Log in to GitHub and locate the GitHub repository for the Online Quiz App.
+
+2. Under the repository name, click "Clone or download."
+
+3. Click on the code button and select "clone with HTTPS," "SSH," or "GitHub CLI," then copy the link shown.
+
+4. Open Git Bash or your preferred terminal.
+
+5. Change the current working directory to the location where you want the cloned directory to be created.
+
+6. Type `git clone` followed by the URL you copied in step 3.
+
+7. Press Enter, and your local clone will be created.
+
+Now you can deploy the app on GitHub Pages and work on it locally.
 
 ## Credits
 
