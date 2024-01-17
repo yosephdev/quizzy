@@ -1,14 +1,17 @@
+/**
+ * Declare constants for DOM elements and possible choices
+ */
 document.addEventListener("DOMContentLoaded", () => {
-  // DOM elements
   const menuToggle = document.getElementById("menu-toggle");
   const currentQuestionElement = document.getElementById("currentQuestion");
 
-  // Event listeners for menu toggle
+  /**
+   * Add event listener for menu toggle, category buttons, Start Quiz button and Next Question button
+   */
   menuToggle?.addEventListener("click", () =>
     menuToggle.classList.toggle("open")
   );
 
-  // Event listeners for category buttons
   document.querySelectorAll(".category-btn").forEach((button) => {
     button.addEventListener("click", (event) => {
       currentCategory = event.target.textContent.trim();
@@ -16,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Event listener for Start Quiz button
   document.getElementById("start-quiz").addEventListener("click", function () {
     document.querySelector("#quiz-interface h2").textContent = "";
 
@@ -38,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     displayQuestion(questions[currentQuestionIndex]);
   });
 
-  // Event listener for Next Question button
   document
     .getElementById("next-question")
     .addEventListener("click", function () {
@@ -59,8 +60,6 @@ let currentCategory = "";
 
 /**
  * Maps category names to their corresponding category IDs used in the quiz API.
- * @param {string} categoryName - The name of the category.
- * @returns {number} The ID corresponding to the given category name.
  */
 function getCategoryId(categoryName) {
   const categories = {
@@ -79,7 +78,6 @@ function getCategoryId(categoryName) {
 
 /**
  * Starts the quiz for the given category.
- * @param {string} category - The category of the quiz.
  */
 async function startQuiz(category) {
   if (!category) {
@@ -121,8 +119,6 @@ async function startQuiz(category) {
 
 /**
  * Fetches quiz questions based on the selected category.
- * @param {string} categoryName - The name of the selected quiz category.
- * @returns {Promise<Object[]>} - A promise that resolves to an array of question objects.
  */
 async function fetchQuestions(categoryName) {
   const categoryId = getCategoryId(categoryName);
@@ -163,7 +159,6 @@ function updateProgressBar() {
 
 /**
  * Displays the current question and its answer choices.
- * @param {Object} question - The question object to display.
  */
 function displayQuestion(question) {
   const currentQuestionElement = document.getElementById("currentQuestion");
@@ -206,8 +201,6 @@ function displayQuestion(question) {
 
 /**
  * Decodes HTML entities in a given string.
- * @param {string} html - The string with HTML entities.
- * @returns {string} - The decoded string.
  */
 function decodeHtml(html) {
   var txt = document.createElement("textarea");
@@ -217,8 +210,6 @@ function decodeHtml(html) {
 
 /**
  * Shuffles an array in place.
- * @param {Array} array - The array to shuffle.
- * @returns {Array} - The shuffled array.
  */
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -230,12 +221,11 @@ function shuffleArray(array) {
 
 /**
  * Handles the logic when an answer is selected.
- * @param {string} selectedAnswer - The answer selected by the user.
- * @param {string} correctAnswer - The correct answer for the current question.
  */
 function handleAnswerSelection(selectedAnswer, correctAnswer) {
   const answerButtons = document.querySelectorAll(".answer-button");
   const currentScoreElement = document.getElementById("currentScore");
+  // const nextQuestionButton = document.getElementById("next-question");
 
   answerButtons.forEach((button) => {
     button.disabled = true;
@@ -251,6 +241,7 @@ function handleAnswerSelection(selectedAnswer, correctAnswer) {
         button.classList.add("incorrect-answer");
       }
     }
+    // nextQuestionButton.disabled = false;
   });
 
   document.getElementById("next-question").classList.remove("hidden");
