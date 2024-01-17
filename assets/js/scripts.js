@@ -225,7 +225,6 @@ function shuffleArray(array) {
 function handleAnswerSelection(selectedAnswer, correctAnswer) {
     const answerButtons = document.querySelectorAll(".answer-button");
     const currentScoreElement = document.getElementById("currentScore");
-    // const nextQuestionButton = document.getElementById("next-question");
 
     answerButtons.forEach((button) => {
         button.disabled = true;
@@ -241,7 +240,6 @@ function handleAnswerSelection(selectedAnswer, correctAnswer) {
                 button.classList.add("incorrect-answer");
             }
         }
-        // nextQuestionButton.disabled = false;
     });
 
     document.getElementById("next-question").classList.remove("hidden");
