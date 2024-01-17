@@ -162,7 +162,7 @@ button {
 
 .category-btn {
     padding: var(--spacing-small) var(--spacing-large);
-    background-color: var(--primary-color-dark);
+    background-color: #0073e6;
     color: white;
     border: none;
     border-radius: 5px;
