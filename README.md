@@ -4,7 +4,7 @@ The Online Quiz App is an interactive platform designed to provide users with a 
 
 ![Check out how Quizzy looks on different devices](assets/images/responsive-mockup.png)
 
-[Check out how Quizzy looks like here](https://yosephdev.github.io/quizzy/)
+[Check out how Quizzy looks live here](https://yosephdev.github.io/quizzy/)
 
 ## Table of Contents
 
@@ -156,11 +156,11 @@ Testing has been a critical part of developing the Online Quiz App to ensure fun
 
 ### Bugs Found and Fixed
 
-- **Solved Bugs**: 
+- **Solved Bugs**:
   - When deployed to GitHub Pages, some links were broken due to path issues. Fixed by updating the file paths.
   - The CSS file link was corrected by removing the leading slash.
 
-- **Unsolved Bugs**: 
+- **Unsolved Bugs**:
   - There are currently no unsolved bugs.
 
 ### Manual Testing
