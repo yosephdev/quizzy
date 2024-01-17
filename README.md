@@ -1,6 +1,6 @@
 # Online Quiz App
 
-Welcome to the Online Quiz App, an interactive platform for testing and improving knowledge in various fields. This app utilizes the Open Trivia Database (<https://opentdb.com/>) to provide a diverse range of quiz questions. Designed as a school project, it aims to offer an engaging user experience using standard web technologies: HTML, CSS, and JavaScript.
+The Online Quiz App is an interactive platform designed to provide users with a wide range of quizzes for knowledge testing and improvement. Leveraging the Open Trivia Database, this app is a school project that offers an engaging user experience with standard web technologies.
 
 ![Check out how Quizzy looks on different devices](assets/images/responsive-mockup.png)
 
@@ -8,43 +8,57 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
 
 - [Online Quiz App](#online-quiz-app)
   - [Table of Contents](#table-of-contents)
-  - [UX](#ux)
+  - [Features](#features)
+    - [Current Features](#current-features)
+    - [Features to Be Implemented](#features-to-be-implemented)
+  - [User Experience (UX)](#user-experience-ux)
     - [User Goals](#user-goals)
     - [User Stories](#user-stories)
     - [Developer's Goals](#developers-goals)
-- [Design Choices](#design-choices)
-  - [Fonts](#fonts)
-  - [Icons](#icons)
-  - [Colors](#colors)
+  - [Design](#design)
+    - [Fonts](#fonts)
+    - [Colors](#colors)
   - [Structure](#structure)
   - [Wireframes](#wireframes)
     - [Mobile Wireframe](#mobile-wireframe)
     - [Desktop Wireframe](#desktop-wireframe)
-- [Features](#features)
-  - [Completed Features](#completed-features)
-  - [Work-in-Progress Features](#work-in-progress-features)
-  - [Planned Features](#planned-features)
-  - [Recent Changes](#recent-changes)
-  - [Reflections and Challenges Encountered](#reflections-and-challenges-encountered)
-  - [Future Improvements](#future-improvements)
 - [Technologies Used](#technologies-used)
   - [Languages](#languages)
   - [Tools](#tools)
-- [Testing](#testing)
-    - [Fixed Bugs](#fixed-bugs)
-    - [Unfixed Bugs](#unfixed-bugs)
+  - [Testing](#testing)
+    - [Bugs Found and Fixed](#bugs-found-and-fixed)
     - [Manual Testing](#manual-testing)
   - [HTML](#html)
   - [CSS](#css)
-  - [Accessibility](#accessibility)
-- [Deployment](#deployment)
-- [Credits](#credits)
-  - [Code Inspiration, Help, and Advice](#code-inspiration-help-and-advice)
-  - [Resources](#resources)
+    - [Lighthouse Report](#lighthouse-report)
+  - [Reflections and Challenges Encountered](#reflections-and-challenges-encountered)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+    - [Acknowledgments](#acknowledgments)
 
 [Back to Top](#table-of-contents)
 
-## UX
+## Features
+
+### Current Features
+
+- **Header**: Showcasing the app's name and navigational cues.
+  ![Online Quiz App Header](assets/images/header-mockup.png)
+  
+- **Game Options**: Users can select from various quiz categories.
+  ![Game Options](assets/images/game-options-mockup.png)
+  
+- **Game Results**: Instant feedback on answers and score tracking.
+  ![Game Results](assets/images/game-results-mockup.png)
+
+### Features to Be Implemented
+
+- **Additional Question Types**: Planning to expand the question types to include more formats such as true/false and multiple-choice.
+- **User Accounts**: Intend to allow users to create accounts to save their progress and scores.
+
+## User Experience (UX)
 
 ### User Goals
 
@@ -64,32 +78,19 @@ Welcome to the Online Quiz App, an interactive platform for testing and improvin
 - Ensure a smooth and responsive user experience.
 - Integrate a variety of quiz categories and difficulty levels.
 
-[Back to Top](#table-of-contents)
+## Design
 
-# Design Choices
+### Fonts
 
-## Fonts
+- **Main Text**: Arial
+- **Headers**: Helvetica
 
-- **Main Text: Arial** - A widely available, readable font for main content.
-- **Headers: Helvetica** - A clean, modern font for headers and emphasis.
+### Colors
 
-## Icons
-
-- Simple and intuitive icons for navigation and interaction, sourced from [Font Awesome](https://fontawesome.com/).
-
-## Colors
-
-The color palette was chosen to be visually appealing and accessible to all users, ensuring high readability and an engaging user experience.
-
-- **Primary Color (Blue)**: Used for headers, links, and to emphasize important elements. It provides a professional and calming tone.
-  
-- **Secondary Color (Green)**: Utilized for buttons, hover states, and interactive elements to denote action and progression.
-
-- **Background (White)**: The main background color for content areas to ensure optimal readability and a clean, open feel.
-
-- **Text Color (Dark Gray)**: A softer alternative to black, providing excellent readability without harsh contrast against the white background.
-
-- **Accent Color (Light Blue)**: Highlights for selected categories and quiz options, adding a subtle visual cue for interactivity.
+- **Primary (Blue)**: Used for headers and important elements.
+- **Secondary (Green)**: For interactive elements like buttons.
+- **Background (White)**: Main content areas.
+- **Text (Dark Gray)**: Main body text.
 
 ## Structure
 
@@ -115,48 +116,6 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 [Back to Top](#table-of-contents)
 
-# Features
-
-## Completed Features
-
-- **Responsive Header**: A header that adjusts to the device's screen size, ensuring a consistent experience across different devices.
-- **Interactive Navigation Menu**: Navigation is smooth and intuitive, working well on both desktop and mobile devices.
-- **Welcome Section**: Provides a warm introduction and sets the stage for the quiz experience.
-- **Category Selection**: Users can choose from a range of topics, making the quiz experience diverse and customizable.
-- **Dynamic Quiz Interface**: The quiz adapts based on the selected category, with a smooth transition between questions.
-- **Instant Feedback Mechanism**: Users receive immediate feedback on their answers, enhancing the interactive experience.
-- **Score Tracking**: The app accurately tracks and displays the user's score throughout the quiz.
-
-## Work-in-Progress Features
-
-- **User Interface Improvements**: Ongoing enhancements to improve user engagement and interactivity.
-- **Accessibility Enhancements**: Continuous efforts to adhere to WCAG guidelines and increase the app's accessibility.
-
-## Planned Features
-
-- **Leaderboards**: To introduce a competitive edge and motivate users to improve.
-- **Social Sharing**: Enabling users to share scores and challenge friends, thereby increasing the app's reach.
-
-## Recent Changes
-
-- **Bug Fixes**: Several bugs related to navigation, category selection, and progress bar alignment have been fixed.
-- **UI Enhancements**: The user interface has been improved to provide a better user experience.
-- **Next Question Button Behavior**: The "Next Question" button now appears only when an answer is selected.
-- **Retake Quiz and Choose New Category**: Improved the behavior of these buttons after completing a quiz.
-- **Accessibility Improvements**: Efforts have been made to ensure accessibility, as shown in the Lighthouse report.
-
-## Reflections and Challenges Encountered
-
-During development, I encountered challenges such as ensuring cross-browser compatibility and maintaining a responsive design. I learned the importance of thorough testing and incremental development.
-
-## Future Improvements
-
-- **Enhanced Accessibility**: Further improvements to ensure the app is usable by people with disabilities.
-- **Quiz Variety and Customization**: Expand the question database and allow users to customize the quiz difficulty and type.
-- **Performance Optimization**: Improve the app's performance, especially on lower-end devices.
-
-[Back to Top](#table-of-contents)
-
 # Technologies Used
 
 ## Languages
@@ -172,29 +131,34 @@ During development, I encountered challenges such as ensuring cross-browser comp
 - **GitHub**: For repository hosting.
 - [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML") - For validating HTML content.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS") - For validating CSS styles.
+- [JSHint JavaScript Validator](https://jshint.com/ "JavaScript Validator") - For validating JavaScript codes.
 
-# Testing
+## Testing
 
-### Fixed Bugs
+Testing has been a critical part of developing the Online Quiz App to ensure functionality, usability, and compatibility across different browsers and devices.
 
-- **Main Navigation Issue**: The main navigation was not properly responding to user interactions. Resolved by updating JavaScript event listeners.
-- **Category Button Functionality**: Category buttons were not always triggering the quiz correctly. Fixed by ensuring correct data passing in `startQuiz` function.
-- **Progress Bar Misalignment**: Progress bar was inaccurately reflecting quiz progress. Corrected in the `updateProgressBar` function.
-- **Start Quiz Button Transition**: Clicking "Start Quiz" now smoothly transitions to quiz questions, improving user experience.
-- **Answer Selection and Question Flow**: After an answer is selected, there is now a "Next Question" button for better control over question progression.
+- I tested playing the game in different browsers: Chrome, Firefox, Safari.
+- I confirmed that the game results are always correct.
+- I confirmed that the header, instructions, options, results, and footer text are all readable and easy to understand.
+- I confirmed that the colors and fonts chosen are easy to read and accessible by running it through Lighthouse in DevTools.
 
-### Unfixed Bugs
+### Bugs Found and Fixed
 
-- **Immediate Answer Feedback**: The app does not provide instant feedback on answer correctness before moving to the next question. Essential for enhancing the learning experience.
+- **Solved Bugs**: 
+  - When deployed to GitHub Pages, some links were broken due to path issues. Fixed by updating the file paths.
+  - The CSS file link was corrected by removing the leading slash.
+
+- **Unsolved Bugs**: 
+  - There are currently no unsolved bugs.
 
 ### Manual Testing
 
-Manual testing was conducted to ensure the functionality and usability of the quiz app. Each feature was tested across different browsers and devices to guarantee a consistent user experience. The main areas of focus were:
+Manual testing was performed extensively to ensure all features worked as expected. This involved:
 
-- **Navigation and Responsiveness**: Tested the navigation menu, category selection, and responsiveness of layout on various devices.
-- **Quiz Functionality**: Verified the quiz start process, question display, answer selection, and progression through questions.
-- **Score Tracking and Results Display**: Checked the accuracy of score tracking and the correct display of results upon quiz completion.
-- **User Interface Interactions**: Ensured buttons and links functioned correctly and provided the expected outcome.
+- **Navigation and Responsiveness**: Ensuring that the navigation menu and category selection are functional across various devices.
+- **Quiz Functionality**: Testing the quiz start process, question display, answer selection, and question progression.
+- **Score Tracking and Results**: Verifying the accuracy of the score tracking and the correct display of results upon quiz completion.
+- **User Interface**: Confirming that buttons and links function as expected.
 
 ## HTML
 
@@ -204,36 +168,39 @@ Manual testing was conducted to ensure the functionality and usability of the qu
 
 - No errors were found when passing through the official (Jigsaw) validator.
 
-## Accessibility
+### Lighthouse Report
 
-- I confirmed that the colors and the fonts chosen are easy to read and accessible by running it through the Lighthouse in DevTools.
+Accessibility and performance were tested using the Lighthouse tool in Chrome DevTools, and the app scored high in all categories.
 
-![Lighthouse report](assets/images/accessbility.jpg)
+![Lighthouse Report](assets/images/accessbility.jpg)
 
-# Deployment
+## Reflections and Challenges Encountered
 
-Deploying the Quizzy website involved the following steps on GitHub Pages:
+During development, I encountered challenges such as ensuring cross-browser compatibility and maintaining a responsive design. I learned the importance of thorough testing and incremental development.
 
-1. Navigate to the GitHub repository and click **Settings**.
-2. Select **Pages** in the side navigation menu.
-3. Under **Source**, choose the **main** branch.
-4. Click **Save** to deploy the website.
+## Deployment
 
-The live site is accessible at [https://yosephdev.github.io/quizzy/](https://yosephdev.github.io/quizzy/), automatically reflecting any committed updates.
+The Online Quiz App is hosted on GitHub Pages:
 
-[Back to Top](#table-of-contents)
+1. Navigate to the GitHub repository settings.
+2. Select the 'Pages' section.
+3. Choose the 'main' branch as the source.
+4. Access the live site at [https://yosephdev.github.io/quizzy/](https://yosephdev.github.io/quizzy/).
 
-# Credits
+## Credits
 
-## Code Inspiration, Help, and Advice
+### Content
 
-- [Simen Daehlin](https://github.com/Eventyret) for guidance and project ideas.
-- [Mitko Bachvarov](https://www.linkedin.com/in/mitko-bachvarov-40b50776/) for guidance and feedback.
-- Thanks to Open Trivia Database for providing the quiz questions.
+- Questions sourced from [Open Trivia Database](<https://opentdb.com/>).
 
-## Resources
+### Media
 
-- [MDN Web Docs](https://developer.mozilla.org/) for development references.
-- [CodeInstitute](http://www.codeinstitute.net/) for coding tutorials.
+- [FontAwesome](https://fontawesome.com/) for app icons.
 
-[Back to Top](#table-of-contents)
+### Acknowledgments
+
+- [Simen Daehlin](https://github.com/Eventyret) for help with project ideas and tips.
+- [Mitko Bachvarov](https://www.linkedin.com/in/mitko-bachvarov-40b50776/) for project guidance and feedback.
+- Thanks to all contributors and testers who have helped improve the app.
+
+[Back to Top](#online-quiz-app)
