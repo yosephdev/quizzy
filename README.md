@@ -4,7 +4,7 @@ The Online Quiz App is an interactive platform designed to provide users with a 
 
 ![Check out how Quizzy looks on different devices](assets/images/responsive-mockup.png)
 
-[Check out how Quizzy looks live here](https://yosephdev.github.io/quizzy/)
+[Check out how Quizzy looks like live here](https://yosephdev.github.io/quizzy/)
 
 ## Table of Contents
 
@@ -69,15 +69,27 @@ The Online Quiz App is an interactive platform designed to provide users with a 
 
 ### Fonts
 
-- **Main Text**: Arial
-- **Headers**: Helvetica
+In the design of the Online Quiz App, font choices were made to ensure readability and a clean appearance:
+
+- **Main Text (Arial)**: Arial (font-family: Arial, sans-serif) was selected as the font for the main text of the app. Arial is widely available and known for its readability, making it a suitable choice for the primary content.
+
+- **Headers (Helvetica)**: Helvetica (font-family: Helvetica, sans-serif), a clean and modern font, was chosen for headers and emphasized text. It provides a crisp and professional appearance to highlight important elements.
 
 ### Colors
 
-- **Primary (Blue)**: Used for headers and important elements.
-- **Secondary (Green)**: For interactive elements like buttons.
-- **Background (White)**: Main content areas.
-- **Text (Dark Gray)**: Main body text.
+The color palette plays a vital role in creating a visually appealing and accessible user experience. Each color was chosen with careful consideration of its role in the app's design:
+
+- **Primary Color (Blue)**: The primary blue color (#007BFF) is used for headers, links, and elements that require emphasis. This color conveys professionalism and offers a calming tone, enhancing the overall user experience.
+
+- **Secondary Color (Green)**: The secondary green color (#4CAF50) is applied to interactive elements such as buttons and hover states. It signifies action and progression, guiding users through the app's features.
+
+- **Background Color (White)**: White (#FFFFFF) serves as the primary background color for content areas. Its purpose is to ensure optimal readability and maintain a clean and open feel throughout the app.
+
+- **Text Color (Dark Gray)**: Dark gray (#333333) was chosen as the text color. This choice provides a softer alternative to black, enhancing readability without creating harsh contrast against the white background, resulting in a pleasant reading experience.
+
+- **Accent Color (Light Blue)**: The accent light blue color (#B3E0FF) is strategically used to highlight selected categories and quiz options. It offers a subtle visual cue for interactivity, aiding users in navigating the app.
+
+These font and color choices were made to create a cohesive and visually pleasing design, contributing to a positive user experience in the Online Quiz App.
 
 ## Structure
 
