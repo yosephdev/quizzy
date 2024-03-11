@@ -45,6 +45,14 @@ The Online Quiz App is an interactive platform designed to provide users with a 
 
 [Back to Top](#table-of-contents)
 
+## Project Goals
+
+The Online Quiz App aims to provide an educational and entertaining platform for users to test and improve their knowledge across various subjects. Our primary objectives include:
+
+- Offer a diverse range of quizzes to cater to different interests and learning needs.
+- Create a user-friendly and engaging quiz experience to enhance user satisfaction.
+- Enable users to track their progress and compare scores, fostering a sense of achievement and motivation.
+  
 ## User Experience (UX)
 
 ### User Goals
@@ -55,9 +63,9 @@ The Online Quiz App is an interactive platform designed to provide users with a 
 
 ### User Stories
 
-- **As a student**, I want to find interesting quizzes to learn and test my knowledge in different subjects.
-- **As a teacher**, I seek an educational tool where I can engage my students with diverse quiz topics.
-- **As a quiz enthusiast**, I want a platform to challenge myself and compare my scores with others.
+- **As a student**, I want to find interesting quizzes to learn and test my knowledge in different subjects so that I can improve my understanding and academic performance.
+- **As a teacher**, I seek an educational tool where I can engage my students with diverse quiz topics to facilitate interactive learning and knowledge retention.
+- **As a quiz enthusiast**, I want a platform to challenge myself and compare my scores with others, allowing me to gauge my knowledge and compete in a friendly environment.
 
 ### Developer's Goals
 
@@ -69,27 +77,27 @@ The Online Quiz App is an interactive platform designed to provide users with a 
 
 ### Fonts
 
-In the design of the Online Quiz App, font choices were made to ensure readability and a clean appearance:
+In the design of the Online Quiz App, font choices were carefully considered to ensure readability and a visually appealing interface:
 
-- **Main Text (Arial)**: Arial (font-family: Arial, sans-serif) was selected as the font for the main text of the app. Arial is widely available and known for its readability, making it a suitable choice for the primary content.
+- **Main Text (Arial)**: Arial (font-family: Arial, sans-serif) was selected for its widespread availability and readability, providing a clean and consistent look for the primary content.
 
-- **Headers (Helvetica)**: Helvetica (font-family: Helvetica, sans-serif), a clean and modern font, was chosen for headers and emphasized text. It provides a crisp and professional appearance to highlight important elements.
+- **Headers (Helvetica)**: Helvetica (font-family: Helvetica, sans-serif) was chosen to emphasize headers and important text, offering a modern and professional appearance.
 
 ### Colors
 
-The color palette plays a vital role in creating a visually appealing and accessible user experience. Each color was chosen with careful consideration of its role in the app's design:
+The color palette was meticulously chosen to create a visually appealing and accessible user experience:
 
-- **Primary Color (Blue)**: The primary blue color (#007BFF) is used for headers, links, and elements that require emphasis. This color conveys professionalism and offers a calming tone, enhancing the overall user experience.
+- **Primary Color (Blue)**: #007BFF was selected as the primary color for headers and links to convey professionalism and maintain a cohesive visual identity.
 
-- **Secondary Color (Green)**: The secondary green color (#4CAF50) is applied to interactive elements such as buttons and hover states. It signifies action and progression, guiding users through the app's features.
+- **Secondary Color (Green)**: #4CAF50 is used for interactive elements such as buttons to indicate action and progression, enhancing user engagement.
 
-- **Background Color (White)**: White (#FFFFFF) serves as the primary background color for content areas. Its purpose is to ensure optimal readability and maintain a clean and open feel throughout the app.
+- **Background Color (White)**: #FFFFFF serves as the primary background color to ensure optimal readability and a clean layout.
 
-- **Text Color (Dark Gray)**: Dark gray (#333333) was chosen as the text color. This choice provides a softer alternative to black, enhancing readability without creating harsh contrast against the white background, resulting in a pleasant reading experience.
+- **Text Color (Dark Gray)**: #333333 provides a softer alternative to black for improved readability and a pleasant reading experience.
 
-- **Accent Color (Light Blue)**: The accent light blue color (#B3E0FF) is strategically used to highlight selected categories and quiz options. It offers a subtle visual cue for interactivity, aiding users in navigating the app.
+- **Accent Color (Light Blue)**: #B3E0FF is strategically applied to highlight selected categories and quiz options, guiding users through the app with subtle visual cues.
 
-These font and color choices were made to create a cohesive and visually pleasing design, contributing to a positive user experience in the Online Quiz App.
+These font and color choices contribute to a cohesive design that enhances usability and user satisfaction.
 
 ## Structure
 
@@ -97,21 +105,17 @@ A straightforward layout ensuring ease of navigation and optimal performance on 
 
 ## Wireframes
 
-The initial design phase of the Online Quiz App included the creation of wireframes to outline the app's layout and features. Using Figma, I started by designing the wireframe for the mobile version, ensuring a mobile-friendly user interface and a focus on usability. Once the mobile layout was finalized, I used it as a foundation to develop the wireframe for the desktop version, adapting the design to take advantage of the larger screen space.
-
-These wireframes provide a visual representation of the app's structure and are crucial for understanding the user flow and interaction design. Both wireframes are included in the project repository and can be viewed through the links below:
+The initial design phase of the Online Quiz App included wireframes for both mobile and desktop versions to guide the development process:
 
 ### Mobile Wireframe
 
 [View the Mobile Wireframe](docs/wireframe-Mobile.png)
 
-This wireframe illustrates the mobile interface, highlighting the user's navigation path and interaction points within the app.
-
 ### Desktop Wireframe
 
 [View the Desktop Wireframe](docs/wireframe-Desktop.png)
 
-The desktop wireframe shows the layout and features as they will be arranged in the desktop environment, offering a broader view of the content and functionalities.
+These wireframes provide a visual representation of the app's layout and features, ensuring consistency and usability across different devices.
 
 [Back to Top](#table-of-contents)
 
@@ -159,39 +163,21 @@ The desktop wireframe shows the layout and features as they will be arranged in 
 
 ## Testing
 
-Testing has been a critical part of developing the Online Quiz App to ensure functionality, usability, and compatibility across different browsers and devices.
-
-- I tested playing the game in different browsers: Chrome, Firefox, Safari.
-- I confirmed that the game results are always correct.
-- I confirmed that the header, instructions, options, results, and footer text are all readable and easy to understand.
-- I confirmed that the colors and fonts chosen are easy to read and accessible by running it through Lighthouse in DevTools.
-
-### Bugs Found and Fixed
-
-- **Solved Bugs**:
-  - When deployed to GitHub Pages, some links were broken due to path issues. Fixed by updating the file paths.
-  - The CSS file link was corrected by removing the leading slash.
-
-- **Unsolved Bugs**:
-  - There are currently no unsolved bugs.
+Testing played a crucial role in ensuring the functionality, usability, and compatibility of the Online Quiz App across various browsers and devices:
 
 ### Manual Testing
 
-Manual testing was performed extensively to ensure all features worked as expected. This involved:
+Extensive manual testing was conducted to verify the app's features and functionality:
 
-- **Navigation and Responsiveness**: Testing involved checking the navigation menu, category selection, and the responsiveness of the layout on various devices and screen sizes.
+- **Navigation and Responsiveness**: Checked navigation menu, category selection, and responsiveness on different devices and screen sizes.
+- **Quiz Functionality**: Verified start process, question display mechanics, answer selection, and progression through the quiz.
+- **Score Tracking and Results Display**: Tested score tracking mechanism and result display accuracy to provide users with accurate feedback.
 
-- **Quiz Functionality**: The start process of the quiz, question display mechanics, answer selection, and progression through the quiz were verified for consistency and accuracy.
-
-- **Score Tracking and Results Display**: The score tracking mechanism and the correct display of results at the end of the quiz were tested to ensure accurate feedback to the user.
-
-- **User Interface Interactions**: All buttons and links were tested to ensure they functioned correctly and provided the expected outcomes, enhancing the overall user experience.
-
-## HTML
+### HTML
 
 - No errors were returned when passing through the official W3C validator.
 
-## CSS
+### CSS
 
 - No errors were found when passing through the official (Jigsaw) validator.
 
@@ -201,6 +187,15 @@ Accessibility and performance were tested using the Lighthouse tool in Chrome De
 
 ![Lighthouse Report](assets/images/accessbility.jpg)
 
+### Bugs Found and Fixed
+
+- **Solved Bugs**:
+  - When deployed to GitHub Pages, some links were broken due to path issues. Fixed by updating the file paths.
+  - The CSS file link was corrected by removing the leading slash.
+
+- **Unsolved Bugs**:
+  - There are currently no unsolved bugs.
+        
 ## Reflections and Challenges Encountered
 
 During development, I encountered challenges such as ensuring cross-browser compatibility and maintaining a responsive design. I learned the importance of thorough testing and incremental development.
