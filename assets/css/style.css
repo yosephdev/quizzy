@@ -52,6 +52,10 @@ header {
     cursor: pointer;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Menu Icon styles */
 .menu-icon {
     font-size: 1.5rem;
