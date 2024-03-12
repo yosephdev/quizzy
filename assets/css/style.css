@@ -1,26 +1,11 @@
-:root {
-    /* Primary color variables */
-    --primary-color: #56a5eb;
-    --primary-color-dark: #007bff;
-    --primary-text-color: #333;
-    --score-color: #5cb85c;
-
-    /* Spacing variables */
-    --spacing-small: 0.5rem;
-    --spacing-medium: 1rem;
-    --spacing-large: 2rem;
-    --font-size-normal: 1rem;
-    --font-size-large: 1.2rem;
-}
-
-/* Reset margin and padding for all elements */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styles */
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     color: var(--primary-text-color);
@@ -28,41 +13,37 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Header styles */
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 var(--spacing-medium);
-    background-color: var(--primary-color-light);
+    padding: 1rem;
+    background-color: var(--primary-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading styles */
+/* Heading Styles */
 .heading a {
     text-decoration: none;
     color: var(--primary-text-color);
     font-size: 1.5rem;
 }
 
-/* Profile Icon styles */
+/* Profile Icon Styles */
 .profile-icon {
     font-size: 1.5rem;
     color: var(--primary-text-color);
     cursor: pointer;
 }
 
-.hidden {
-    display: none;
-}
-
-/* Menu Icon styles */
+/* Menu Icon Styles */
 .menu-icon {
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-/* Quiz Intro section styles */
+/* Quiz Intro Section Styles */
 .quiz-intro {
     background-color: var(--primary-color-light);
     padding: 2rem;
@@ -84,65 +65,30 @@ header {
     font-size: 1.2rem;
 }
 
-/* Quiz interface and category selection styles */
+/* Quiz Interface and Category Selection Styles */
 #quiz-interface,
 #category-selection {
     background-color: #f0f0f0;
-    padding: var(--spacing-large);
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: var(--spacing-large) auto;
+    margin: 2rem auto;
     max-width: 800px;
     text-align: center;
 }
 
 #category-selection h2 {
-    margin-bottom: var(--spacing-medium);
+    margin-bottom: 1rem;
 }
 
-#quiz-interface.hidden,
-#results.hidden {
-    display: none;
-}
-
-#retake-quiz-intro {
-    padding: 10px 2.5rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    outline: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
-    margin-top: 2rem;
-    display: block;
-    width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#retake-quiz-intro:hover {
-    background-color: #45a049;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-
-}
-
-#retake-quiz-intro:active {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #3e8e41;
-}
-
-
-/* Instructions paragraph styles */
+/* Instructions Paragraph Styles */
 .instructions {
-    font-size: var(--font-size-normal);
+    font-size: 1rem;
     color: var(--primary-text-color);
-    margin-bottom: var(--spacing-small);
+    margin-bottom: 0.5rem;
 }
 
-/* Start Quiz */
+/* Start Quiz Button Styles */
 #start-quiz {
     background-color: var(--primary-color-dark);
     color: white;
@@ -160,43 +106,17 @@ header {
     background-color: var(--primary-color);
 }
 
-/* Button */
-button {
-    padding: var(--spacing-small) var(--spacing-medium);
-    font-size: var(--font-size-normal);
-}
-
-/* Progress bar styles */
-#progressBar-container {
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    margin: var(--spacing-medium) 0;
-}
-
-#progress-bar {
-    height: 20px;
-    background-color: var(--score-color);
-    border-radius: 5px;
-}
-
-/* Score container styles */
-#score-container {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    display: none;
-}
-
-/* Category buttons styles */
+/* Category Buttons Styles */
 .category-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-medium);
+    gap: 1rem;
 }
 
 .category-btn {
-    padding: var(--spacing-small) var(--spacing-large);
-    background-color: #0073e6;
+    padding: 10px 20px;
+    background-color: var(--primary-color-dark);
     color: white;
     border: none;
     border-radius: 5px;
@@ -210,17 +130,17 @@ button {
 }
 
 .category-btn i {
-    margin-right: var(--spacing-small);
+    margin-right: 0.5rem;
 }
 
-/* Answer choices container styles */
+/* Answer Choices Container Styles */
 #answerChoices {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
     text-align: center;
-    margin-top: var(--spacing-medium);
+    margin-top: 2rem;
 }
 
 .answer-button {
@@ -234,6 +154,9 @@ button {
     transition: background-color 0.3s ease;
 }
 
+.answer-button:hover {
+    background-color: var(--primary-color);
+}
 
 /* Correct and Incorrect Answer Button Styles */
 .correct-answer {
@@ -248,13 +171,7 @@ button {
     color: white;
 }
 
-/* General Hidden Class */
-.hidden {
-    display: none;
-}
-
-/* Next Question styles */
-
+/* Next Question Button Styles */
 #next-question {
     background-color: var(--primary-color-dark);
     color: white;
@@ -264,42 +181,44 @@ button {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 1rem;
 }
 
 #next-question:hover {
     background-color: var(--primary-color);
 }
 
-/* Results section styles */
+/* Results Section Styles */
 #results {
     background-color: white;
-    padding: var(--spacing-large);
+    padding: 2rem;
     width: 80%;
     margin: 2rem auto;
     text-align: center;
     border-radius: 5px;
-    font-size: var(--font-size-large);
+    font-size: 1.2rem;
 }
 
-/* Button styles for results */
+/* Button Styles for Results */
 #results button {
-    padding: var(--spacing-small) var(--spacing-medium);
-    margin: var(--spacing-small);
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
     background-color: var(--primary-color-dark);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: opacity 0.3s;
 }
 
 #results button:hover {
     opacity: 0.8;
 }
 
-/* Larger screens */
+/* Larger Screens */
 @media (min-width: 768px) {
     header {
-        padding: 0 var(--spacing-large);
+        padding: 0 2rem;
     }
 
     .category-buttons {
