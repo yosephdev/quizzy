@@ -2,9 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const currentQuestionElement = document.getElementById("currentQuestion");
 
-  /**
-   * Add event listener for menu toggle, category buttons, Start Quiz button, Next Question button and Retake Quiz button
-   */
   menuToggle?.addEventListener("click", () =>
     menuToggle.classList.toggle("open")
   );
@@ -12,8 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".category-btn").forEach((button) => {
     button.addEventListener("click", (event) => {
       currentCategory = event.target.textContent.trim();
-      startQuiz(currentCategory);      
-      // document.getElementById("retake-quiz-intro").classList.add("hidden");
+      startQuiz(currentCategory);
     });
   });
 
@@ -25,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .forEach((el) => el.classList.add("hidden"));
 
     document.getElementById("category-selection").classList.add("hidden");
-      this.classList.add("hidden");     
+    this.classList.add("hidden");
 
     currentQuestionIndex = 0;
     score = 0;
@@ -34,10 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("score-container").classList.remove("hidden");
     document.getElementById("answerChoices").classList.remove("hidden");
     document.getElementById("progressBar-container").classList.remove("hidden");
-    
+
     displayQuestion(questions[currentQuestionIndex]);
-      
   });
+
+  document
+    .getElementById("retake-quiz-intro")
+    .addEventListener("click", retakeQuiz);
+  document
+    .getElementById("retake-quiz-results")
+    .addEventListener("click", retakeQuiz);
 
   document
     .getElementById("next-question")
@@ -83,7 +85,8 @@ async function startQuiz(category) {
     alert("Please select a category first.");
     return;
   }
-  
+
+  document.querySelector(".quiz-intro").classList.add("hidden");
   document
     .querySelectorAll(".instructions")
     .forEach((el) => el.classList.remove("hidden"));
@@ -99,7 +102,8 @@ async function startQuiz(category) {
     const categorySelection = document.getElementById("category-selection");
 
     if (questions.length > 0) {
-      document.getElementById("start-quiz").classList.remove("hidden");      
+      document.getElementById("start-quiz").classList.remove("hidden");
+      document.getElementById("retake-quiz-intro").classList.remove("hidden");
       quizInterface.classList.remove("hidden");
       categorySelection.classList.add("hidden");
     } else {
@@ -372,7 +376,7 @@ function chooseNewCategory() {
   document.getElementById("results").classList.add("hidden");
 
   document.getElementById("category-selection").classList.remove("hidden");
-  
+  document.querySelector(".quiz-intro").classList.remove("hidden");
   document.getElementById("start-quiz").classList.remove("hidden");
 
   document.getElementById("score-container").classList.add("hidden");
