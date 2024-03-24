@@ -5,93 +5,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tags for search engines -->
     <meta name="description"
         content="Online Quiz App. Engage in various quizzes to test and improve your knowledge. Categories include science, history, entertainment, and more. Perfect for quiz enthusiasts of all ages.">
     <meta name="keywords"
         content="online quiz, quiz app, knowledge test, trivia, quizzes, education, learning, science quiz, history quiz, entertainment quiz">
+    <!--Favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1OlgJXSk4jZbBrBbTAPD4JpYYQKbvbOQhXOTIb4tUys8ESFXwsmMDS/F6ASQiu9KtLmIfDufv+R8X4TGBJzE9A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- FontAwesome link -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <!--Title-->
     <title>Quizzy - Test Your Knowledge</title>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
-        <h1 class="heading"><a href="#home" class="home-link">Quizzy</a></h1>
-        <nav>
-            <div class="profile-icon">
-                <i class="fas fa-user"></i>
-            </div>
-        </nav>
         <div id="menu-toggle" class="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
+        <h1 class="heading"><a href="#home" class="home-link">Quizzy</a></h1>
+        <div class="profile-icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
     </header>
 
+    <!-- Main -->
     <main id="home">
+        <!-- Welcome Section -->
         <section class="quiz-intro">
             <h2>Welcome to Quizzy</h2>
             <p>Test your knowledge with our quizzes!</p>
         </section>
 
+        <!-- Category Selection -->
         <section id="category-selection">
             <h2>Select a Category:</h2>
             <div class="category-buttons">
-                <button class="category-btn" aria-label="Science Category">Science <i class="fas fa-flask"></i></button>
-                <button class="category-btn" aria-label="Math Category">Math <i class="fas fa-calculator"></i></button>
-                <button class="category-btn" aria-label="History Category">History <i
-                        class="fas fa-landmark"></i></button>
-                <button class="category-btn" aria-label="Literature Category">Literature <i
-                        class="fas fa-book-open"></i></button>
-                <button class="category-btn" aria-label="Technology Category">Technology <i
-                        class="fas fa-microchip"></i></button>
-                <button class="category-btn" aria-label="Geography Category">Geography <i
-                        class="fas fa-globe-americas"></i></button>
-                <button class="category-btn" aria-label="Arts Category">Arts <i class="fas fa-paint-brush"></i></button>
-                <button class="category-btn" aria-label="Sports Category">Sports <i class="fas fa-futbol"></i></button>
+                <button class="category-btn" aria-label="Science Category"><i class="fas fa-flask"></i> Science</button>
+                <button class="category-btn" aria-label="Math Category"><i class="fas fa-calculator"></i> Math</button>
+                <button class="category-btn" aria-label="History Category"><i class="fas fa-landmark"></i> History</button>
+                <button class="category-btn" aria-label="Literature Category"><i class="fas fa-book-open"></i> Literature</button>
+                <button class="category-btn" aria-label="Technology Category"><i class="fas fa-microchip"></i> Technology</button>
+                <button class="category-btn" aria-label="Geography Category"><i class="fas fa-globe-americas"></i>
+                    Geography</button>
+                <button class="category-btn" aria-label="Arts Category"><i class="fas fa-paint-brush"></i> Arts</button>
+                <button class="category-btn" aria-label="Sports Category"><i class="fas fa-futbol"></i> Sports</button>
             </div>
+
         </section>
 
+        <!-- Quiz Interface -->
         <section id="quiz-interface" class="hidden">
-            <h2>Test Your Knowledge with this 10-Question Quiz</h2>
+            <h2>Test your knowledge with this 10-question Quiz.</h2>
             <p class="instructions">This quiz consists of 10 multiple-choice questions.</p>
             <p class="instructions">You will have 30 seconds to answer each question. Good luck!</p>
-
             <button id="start-quiz">Start Quiz</button>
-
             <div id="score-container" class="hidden">
                 Score: <span id="currentScore">0</span>
             </div>
-
             <h2 id="currentQuestion" class="hidden">Loading question...</h2>
-
             <div id="answerChoices" class="hidden">
+                <!-- Questions will be loaded here by JS -->
             </div>
-
             <button id="next-question" class="hidden">Next Question</button>
-
-            <div id="progressBar-container" class="hidden" aria-label="Progress bar container">
-                <div id="progress-bar" style="width: 0%;" aria-label="Progress bar"></div>
+            <div id="progressBar-container" class="hidden">
+                <div id="progress-bar" style="width: 0%;">
+                </div>
             </div>
-
             <button id="retake-quiz-intro" class="hidden">Retake Quiz</button>
         </section>
 
+        <!-- Results Section -->
         <section id="results" class="hidden">
             <h2>Your Results</h2>
             <p id="results-text">
-                Loading results...
+                <!-- Results will be populated here by JavaScript -->
             </p>
             <button id="retake-quiz-results">Retake Quiz</button>
             <button id="choose-new-category">Choose New Category</button>
         </section>
+
     </main>
 
-    <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
     <script src="assets/js/scripts.js"></script>
 </body>
 
