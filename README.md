@@ -1,10 +1,10 @@
-# Online Quiz App
+# Quizzy 🎯
 
-The Online Quiz App is an interactive platform designed to provide users with a wide range of quizzes for knowledge testing and improvement. Leveraging the Open Trivia Database, this app is a school project that offers an engaging user experience with standard web technologies.
+A fun and interactive quiz application developed as a school project, designed to make learning enjoyable. Test your knowledge across various categories with instant feedback and track your progress!
 
-![Check out how Quizzy looks on different devices](assets/images/responsive-mockup.png)
+[Try Quizzy Live](https://yosephdev.github.io/quizzy/) | [View Demo](#features)
 
-[Check out how Quizzy looks like live here](https://yosephdev.github.io/quizzy/)
+![Quiz App Preview](assets/images/responsive-mockup.png)
 
 ## Table of Contents
 
@@ -121,6 +121,12 @@ These wireframes provide a visual representation of the app's layout and feature
 
 ## Features
 
+- 📚 Multiple quiz categories
+- 🎯 Instant feedback on answers
+- 📱 Fully responsive design
+- 🎮 User-friendly interface
+- 📊 Score tracking
+
 ### Current Features
 
 - **Header**: Showcasing the app's name and navigational cues.
@@ -138,7 +144,7 @@ These wireframes provide a visual representation of the app's layout and feature
 - **Score Tracking**: The app accurately tracks and displays the user's score throughout the quiz.
 - ![Game Results](assets/images/game-results-mockup.png)
 
-### Features to Be Implemented
+### 🎯 Future Improvements
 
 - **Leaderboards**: To introduce a competitive edge and motivate users to improve.
 - **Social Sharing**: Enabling users to share scores and challenge friends, thereby increasing the app's reach.
@@ -181,11 +187,15 @@ Extensive manual testing was conducted to verify the app's features and function
 
 - No errors were found when passing through the official (Jigsaw) validator.
 
-### Lighthouse Report
+### 🚀 Performance
 
 Accessibility and performance were tested using the Lighthouse tool in Chrome DevTools, and the app scored high in all categories.
 
 ![Lighthouse Report](assets/images/accessbility.jpg)
+
+- ✅ High accessibility score
+- ✅ Mobile-friendly
+- ✅ Fast loading times
 
 ### Bugs Found and Fixed
 
@@ -257,6 +267,9 @@ Now you can deploy the app on GitHub Pages and work on it locally.
 ### Media
 
 - [FontAwesome](https://fontawesome.com/) for app icons.
+
+### 📜 License
+This project is created for educational purposes.
 
 ### Acknowledgments
 
