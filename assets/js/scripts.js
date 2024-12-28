@@ -58,6 +58,9 @@ let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let currentCategory = "";
+let timer;
+let timeLeft;
+let currentDifficulty = 'medium';
 
 /**
  * Maps category names to their corresponding category IDs used in the quiz API.
@@ -81,6 +84,7 @@ function getCategoryId(categoryName) {
  * Starts the quiz for the given category.
  */
 async function startQuiz(category) {
+  showLoading();
   if (!category) {
     alert("Please select a category first.");
     return;
@@ -126,7 +130,7 @@ async function startQuiz(category) {
 async function fetchQuestions(categoryName) {
   const categoryId = getCategoryId(categoryName);
 
-  const apiURL = `https://opentdb.com/api.php?amount=10&category=${categoryId}&type=multiple`;
+  const apiURL = `https://opentdb.com/api.php?amount=10&category=${categoryId}&difficulty=${currentDifficulty}&type=multiple`;
 
   try {
     const response = await fetch(apiURL);
@@ -200,6 +204,9 @@ function displayQuestion(question) {
   document.getElementById("progressBar-container").classList.remove("hidden");
 
   updateProgressBar();
+
+  clearInterval(timer);
+  startTimer();
 }
 
 /**
@@ -239,8 +246,10 @@ function handleAnswerSelection(selectedAnswer, correctAnswer) {
           currentScoreElement.textContent = `${score}`;
         }
         button.classList.add("correct-answer");
+        playSound('correct');
       } else {
         button.classList.add("incorrect-answer");
+        playSound('incorrect');
       }
     }
   });
@@ -381,4 +390,87 @@ function chooseNewCategory() {
 
   document.getElementById("score-container").classList.add("hidden");
   document.getElementById("next-question").classList.add("hidden");
+}
+
+function startTimer() {
+  timeLeft = 30;
+  const timerElement = document.getElementById('timer');
+  
+  timer = setInterval(() => {
+    timeLeft--;
+    timerElement.textContent = timeLeft;
+    
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      handleTimeUp();
+    }
+  }, 1000);
+}
+
+function handleTimeUp() {
+  const answerButtons = document.querySelectorAll('.answer-button');
+  answerButtons.forEach(button => button.disabled = true);
+  
+  // Show correct answer
+  const currentQuestion = questions[currentQuestionIndex];
+  answerButtons.forEach(button => {
+    if (button.textContent.includes(currentQuestion.correct_answer)) {
+      button.classList.add('correct-answer');
+    }
+  });
+  
+  document.getElementById('next-question').classList.remove('hidden');
+}
+
+function updateApiUrl(categoryId) {
+  return `https://opentdb.com/api.php?amount=10&category=${categoryId}&difficulty=${currentDifficulty}&type=multiple`;
+}
+
+function updateScore() {
+  const scoreElement = document.getElementById('currentScore');
+  scoreElement.classList.add('score-update');
+  scoreElement.textContent = score;
+  
+  setTimeout(() => {
+    scoreElement.classList.remove('score-update');
+  }, 500);
+}
+
+function saveHighScore() {
+  const highScores = JSON.parse(localStorage.getItem('highScores')) || {};
+  
+  if (!highScores[currentCategory] || score > highScores[currentCategory]) {
+    highScores[currentCategory] = score;
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    return true;
+  }
+  return false;
+}
+
+function displayHighScore() {
+  const highScores = JSON.parse(localStorage.getItem('highScores')) || {};
+  const categoryHighScore = highScores[currentCategory] || 0;
+  
+  return `<p>High Score: ${categoryHighScore}</p>`;
+}
+
+function showLoading() {
+  const loadingHTML = `
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Loading questions...</p>
+    </div>
+  `;
+  
+  document.getElementById('quiz-interface').innerHTML = loadingHTML;
+}
+
+const sounds = {
+  correct: new Audio('assets/sounds/correct.mp3'),
+  incorrect: new Audio('assets/sounds/incorrect.mp3'),
+  gameOver: new Audio('assets/sounds/game-over.mp3')
+};
+
+function playSound(type) {
+  sounds[type].play();
 }
