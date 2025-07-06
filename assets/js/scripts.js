@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentQuestionElement.classList.remove("hidden");
     document.getElementById("score-container").classList.remove("hidden");
     document.getElementById("answerChoices").classList.remove("hidden");
-    document.getElementById("progressBar-container").classList.remove("hidden");
+    document.getElementById("timer-container").classList.remove("hidden");
 
     displayQuestion(questions[currentQuestionIndex]);
   });
@@ -200,6 +200,7 @@ function shuffleArray(array) {
  * Handles the logic when an answer is selected.
  */
 function handleAnswerSelection(selectedAnswer, correctAnswer) {
+  clearInterval(timer);
   const answerButtons = document.querySelectorAll(".answer-button");
   const currentScoreElement = document.getElementById("currentScore");
 
@@ -208,7 +209,8 @@ function handleAnswerSelection(selectedAnswer, correctAnswer) {
 
     if (button.textContent.includes(selectedAnswer)) {
       if (selectedAnswer === correctAnswer) {
-        score++;
+        const points = 50 + (timeLeft * 2);
+        score += points;
         if (currentScoreElement) {
           currentScoreElement.textContent = `${score}`;
         }
