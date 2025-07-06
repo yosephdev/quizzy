@@ -21,7 +21,6 @@ class QuizApp {
         this.retakeQuizResultsButton = document.getElementById("retake-quiz-results");
         this.nextQuestionButton = document.getElementById("next-question");
         this.chooseNewCategoryButton = document.getElementById("choose-new-category");
-        this.initialQuizInterfaceHTML = document.getElementById("quiz-interface").innerHTML;
 
         this.sounds = {
             correct: new Audio('assets/sounds/correct.mp3'),
@@ -124,25 +123,14 @@ class QuizApp {
             const categorySelection = document.getElementById("category-selection");
 
             if (this.questions.length > 0) {
-                // Hide loading spinner
-                quizInterface.innerHTML = this.initialQuizInterfaceHTML; // Restore original HTML
-                // Re-get references to elements that might have been overwritten
-                this.startQuizButton = document.getElementById("start-quiz");
-                this.retakeQuizIntroButton = document.getElementById("retake-quiz-intro");
-                this.nextQuestionButton = document.getElementById("next-question");
-                this.currentQuestionElement = document.getElementById("currentQuestion");
-                this.retakeQuizResultsButton = document.getElementById("retake-quiz-results");
-                this.chooseNewCategoryButton = document.getElementById("choose-new-category");
-
+                document.getElementById("quiz-interface").classList.remove("hidden");
+                document.getElementById("category-selection").classList.add("hidden");
                 this.startQuizButton.classList.remove("hidden");
                 this.retakeQuizIntroButton.classList.remove("hidden");
-                quizInterface.classList.remove("hidden");
-                categorySelection.classList.add("hidden");
-
             } else {
                 alert("No questions available for this category. Please choose another category.");
-                quizInterface.classList.add("hidden");
-                categorySelection.classList.remove("hidden");
+                document.getElementById("quiz-interface").classList.add("hidden");
+                document.getElementById("category-selection").classList.remove("hidden");
             }
         } catch (error) {
             console.error("Error fetching questions:", error);
