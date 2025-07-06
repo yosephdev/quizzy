@@ -126,6 +126,8 @@ header {
 .category-btn:hover {
     background-color: var(--secondary-color);
     color: var(--text-color);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .category-btn i {

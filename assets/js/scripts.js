@@ -280,7 +280,7 @@ class QuizApp {
             ${newHighScore ? "<p class='new-high-score'>New High Score!</p>" : ""}
             ${this.displayHighScore()}
             <button id="retake-quiz-results">Retake Quiz</button>
-            <button id="choose-new-category">Choose New Category</button>`;
+            <button id="choose-new-category">New Game</button>`;
 
             document.getElementById("retake-quiz-results").addEventListener("click", () => this.retakeQuiz());
             document.getElementById("choose-new-category").addEventListener("click", () => this.chooseNewCategory());
