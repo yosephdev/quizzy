@@ -226,3 +226,17 @@ header {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.new-high-score {
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}

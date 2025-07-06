@@ -21,10 +21,29 @@ class QuizApp {
         this.retakeQuizResultsButton = document.getElementById("retake-quiz-results");
         this.nextQuestionButton = document.getElementById("next-question");
         this.chooseNewCategoryButton = document.getElementById("choose-new-category");
+
+        this.sounds = {
+            correct: new Audio('assets/sounds/correct.mp3'),
+            incorrect: new Audio('assets/sounds/incorrect.mp3'),
+            gameOver: new Audio('assets/sounds/game-over.mp3')
+        };
     }
 
     init() {
         this.addEventListeners();
+    }
+
+    playSound(type) {
+        this.sounds[type].play();
+    }
+
+    updateScoreDisplay() {
+        const scoreElement = document.getElementById('currentScore');
+        scoreElement.classList.add('score-update');
+        scoreElement.textContent = this.score;
+        setTimeout(() => {
+            scoreElement.classList.remove('score-update');
+        }, 500);
     }
 
     addEventListeners() {
@@ -108,7 +127,56 @@ class QuizApp {
                 this.retakeQuizIntroButton.classList.remove("hidden");
                 quizInterface.classList.remove("hidden");
                 categorySelection.classList.add("hidden");
-                this.displayQuestion(this.questions[this.currentQuestionIndex]);
+                quizInterface.innerHTML = `<h2>Test your knowledge with this 10-question Quiz.</h2>
+            <p class="instructions">This quiz consists of 10 multiple-choice questions.</p>
+            <p class="instructions">You will have 30 seconds to answer each question. Good luck!</p>
+            <button id="start-quiz">Start Quiz</button>
+            <div id="score-container" class="hidden">
+                Score: <span id="currentScore">0</span>
+            </div>
+            <div id="timer-container" class="hidden">
+                Time Left: <span id="timer">30</span>s
+            </div>
+            <h2 id="currentQuestion" class="hidden">Loading question...</h2>
+            <div id="answerChoices" class="hidden">
+                <!-- Questions will be loaded here by JS -->
+            </div>
+            <button id="next-question" class="hidden">Next Question</button>
+            <div id="progressBar-container" class="hidden">
+                <div id="progress-bar" style="width: 0%;">
+                </div>
+            </div>
+            <button id="retake-quiz-intro" class="hidden">Retake Quiz</button>`;
+
+                // Re-attach event listeners to newly created elements
+                document.getElementById("start-quiz").addEventListener("click", () => {
+                    document.querySelector("#quiz-interface h2").textContent = "";
+                    document.querySelectorAll(".instructions").forEach((el) => el.classList.add("hidden"));
+                    document.getElementById("category-selection").classList.add("hidden");
+                    document.getElementById("start-quiz").classList.add("hidden");
+
+                    this.currentQuestionIndex = 0;
+                    this.score = 0;
+
+                    this.currentQuestionElement.classList.remove("hidden");
+                    document.getElementById("score-container").classList.remove("hidden");
+                    document.getElementById("answerChoices").classList.remove("hidden");
+                    document.getElementById("timer-container").classList.remove("hidden");
+                    document.getElementById("progressBar-container").classList.remove("hidden");
+
+                    this.displayQuestion(this.questions[this.currentQuestionIndex]);
+                });
+                document.getElementById("retake-quiz-intro").addEventListener("click", () => this.retakeQuiz());
+                document.getElementById("next-question").addEventListener("click", () => {
+                    if (this.currentQuestionIndex < this.questions.length - 1) {
+                        this.currentQuestionIndex++;
+                        this.displayQuestion(this.questions[this.currentQuestionIndex]);
+                        this.resetAnswerButtons();
+                    } else {
+                        this.endQuiz();
+                    }
+                });
+
             } else {
                 alert("No questions available for this category. Please choose another category.");
                 quizInterface.classList.add("hidden");
@@ -212,8 +280,11 @@ class QuizApp {
                         currentScoreElement.classList.add("score-update");
                     }
                     button.classList.add("correct-answer");
+                    this.playSound('correct');
+                    this.updateScoreDisplay();
                 } else {
                     button.classList.add("incorrect-answer");
+                    this.playSound('incorrect');
                 }
             }
         });
