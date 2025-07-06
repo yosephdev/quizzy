@@ -134,37 +134,6 @@ class QuizApp {
                 this.retakeQuizResultsButton = document.getElementById("retake-quiz-results");
                 this.chooseNewCategoryButton = document.getElementById("choose-new-category");
 
-                // Re-attach event listeners to newly created elements
-                this.startQuizButton.addEventListener("click", () => {
-                    document.querySelector("#quiz-interface h2").textContent = "";
-                    document.querySelectorAll(".instructions").forEach((el) => el.classList.add("hidden"));
-                    document.getElementById("category-selection").classList.add("hidden");
-                    this.startQuizButton.classList.add("hidden");
-
-                    this.currentQuestionIndex = 0;
-                    this.score = 0;
-
-                    this.currentQuestionElement.classList.remove("hidden");
-                    document.getElementById("score-container").classList.remove("hidden");
-                    document.getElementById("answerChoices").classList.remove("hidden");
-                    document.getElementById("timer-container").classList.remove("hidden");
-                    document.getElementById("progressBar-container").classList.remove("hidden");
-
-                    this.displayQuestion(this.questions[this.currentQuestionIndex]);
-                });
-                this.retakeQuizIntroButton.addEventListener("click", () => this.retakeQuiz());
-                this.retakeQuizResultsButton.addEventListener("click", () => this.retakeQuiz());
-                this.chooseNewCategoryButton.addEventListener("click", () => this.chooseNewCategory());
-                this.nextQuestionButton.addEventListener("click", () => {
-                    if (this.currentQuestionIndex < this.questions.length - 1) {
-                        this.currentQuestionIndex++;
-                        this.displayQuestion(this.questions[this.currentQuestionIndex]);
-                        this.resetAnswerButtons();
-                    } else {
-                        this.endQuiz();
-                    }
-                });
-
                 this.startQuizButton.classList.remove("hidden");
                 this.retakeQuizIntroButton.classList.remove("hidden");
                 quizInterface.classList.remove("hidden");
