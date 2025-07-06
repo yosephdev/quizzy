@@ -62,7 +62,23 @@ let timer;
 let timeLeft;
 let currentDifficulty = 'medium';
 
+/**
+ * Maps category names to their corresponding category IDs used in the quiz API.
+ */
+function getCategoryId(categoryName) {
+  const categories = {
+    Science: 17,
+    Math: 19,
+    History: 23,
+    Literature: 10,
+    Technology: 18,
+    Geography: 22,
+    Arts: 25,
+    Sports: 21,
+  };
 
+  return categories[categoryName] || 17;
+}
 
 /**
  * Starts the quiz for the given category.
@@ -112,10 +128,20 @@ async function startQuiz(category) {
  * Fetches quiz questions based on the selected category.
  */
 async function fetchQuestions(categoryName) {
+  const categoryId = getCategoryId(categoryName);
+
+  const apiURL = `https://opentdb.com/api.php?amount=10&category=${categoryId}&difficulty=${currentDifficulty}&type=multiple`;
+
   try {
-    const response = await fetch("assets/js/questions.json");
-    const questions = await response.json();
-    return questions.filter(q => q.category === categoryName);
+    const response = await fetch(apiURL);
+    const data = await response.json();
+
+    if (data.response_code === 0) {
+      return data.results;
+    } else {
+      console.error("API response error: ", data);
+      return [];
+    }
   } catch (error) {
     console.error("Fetch error: ", error);
     return [];
@@ -152,22 +178,22 @@ function displayQuestion(question) {
     return;
   }
 
-  currentQuestionElement.innerHTML = question.question;
+  currentQuestionElement.innerHTML = decodeHtml(question.question);
 
   answerChoicesContainer.innerHTML = "";
 
   const answers = shuffleArray([
-    question.answer,
-    ...question.options.filter(o => o !== question.answer),
+    question.correct_answer,
+    ...question.incorrect_answers,
   ]);
 
   const choiceLetters = ["A", "B", "C", "D"];
   answers.forEach((answer, index) => {
     const answerButton = document.createElement("button");
     answerButton.className = "answer-button";
-    answerButton.textContent = `${choiceLetters[index]}. ${answer}`;
+    answerButton.textContent = `${choiceLetters[index]}. ${decodeHtml(answer)}`;
     answerButton.addEventListener("click", () =>
-      handleAnswerSelection(answer, question.answer)
+      handleAnswerSelection(answer, question.correct_answer)
     );
     answerChoicesContainer.appendChild(answerButton);
   });
@@ -183,7 +209,14 @@ function displayQuestion(question) {
   startTimer();
 }
 
-
+/**
+ * Decodes HTML entities in a given string.
+ */
+function decodeHtml(html) {
+  var txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
 
 /**
  * Shuffles an array in place.
@@ -387,7 +420,7 @@ function handleTimeUp() {
   // Show correct answer
   const currentQuestion = questions[currentQuestionIndex];
   answerButtons.forEach(button => {
-    if (button.textContent.includes(currentQuestion.answer)) {
+    if (button.textContent.includes(currentQuestion.correct_answer)) {
       button.classList.add('correct-answer');
     }
   });
