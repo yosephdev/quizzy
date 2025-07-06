@@ -127,6 +127,7 @@ class QuizApp {
                 document.getElementById("category-selection").classList.add("hidden");
                 this.startQuizButton.classList.remove("hidden");
                 this.retakeQuizIntroButton.classList.remove("hidden");
+                this.displayQuestion(this.questions[this.currentQuestionIndex]);
             } else {
                 alert("No questions available for this category. Please choose another category.");
                 document.getElementById("quiz-interface").classList.add("hidden");
