@@ -125,49 +125,28 @@ class QuizApp {
 
             if (this.questions.length > 0) {
                 quizInterface.innerHTML = this.initialQuizInterfaceHTML; // Restore original HTML
-                this.startQuizButton = document.getElementById("start-quiz"); // Re-get reference
-                this.retakeQuizIntroButton = document.getElementById("retake-quiz-intro"); // Re-get reference
-                this.nextQuestionButton = document.getElementById("next-question"); // Re-get reference
+                // Re-get references to elements that might have been overwritten
+                this.startQuizButton = document.getElementById("start-quiz");
+                this.retakeQuizIntroButton = document.getElementById("retake-quiz-intro");
+                this.nextQuestionButton = document.getElementById("next-question");
+                this.currentQuestionElement = document.getElementById("currentQuestion");
 
                 this.startQuizButton.classList.remove("hidden");
                 this.retakeQuizIntroButton.classList.remove("hidden");
                 quizInterface.classList.remove("hidden");
                 categorySelection.classList.add("hidden");
 
-                // Re-attach event listeners
-                this.startQuizButton.addEventListener("click", () => {
-                    document.querySelector("#quiz-interface h2").textContent = "";
-                    document.querySelectorAll(".instructions").forEach((el) => el.classList.add("hidden"));
-                    document.getElementById("category-selection").classList.add("hidden");
-                    this.startQuizButton.classList.add("hidden");
-
-                    this.currentQuestionIndex = 0;
-                    this.score = 0;
-
-                    this.currentQuestionElement.classList.remove("hidden");
-                    document.getElementById("score-container").classList.remove("hidden");
-                    document.getElementById("answerChoices").classList.remove("hidden");
-                    document.getElementById("timer-container").classList.remove("hidden");
-                    document.getElementById("progressBar-container").classList.remove("hidden");
-
-                    this.displayQuestion(this.questions[this.currentQuestionIndex]);
-                });
-                this.retakeQuizIntroButton.addEventListener("click", () => this.retakeQuiz());
-                this.nextQuestionButton.addEventListener("click", () => {
-                    if (this.currentQuestionIndex < this.questions.length - 1) {
-                        this.currentQuestionIndex++;
-                        this.displayQuestion(this.questions[this.currentQuestionIndex]);
-                        this.resetAnswerButtons();
-                    } else {
-                        this.endQuiz();
-                    }
-                });
-
             } else {
                 alert("No questions available for this category. Please choose another category.");
                 quizInterface.classList.add("hidden");
                 categorySelection.classList.remove("hidden");
             }
+        } catch (error) {
+            console.error("Error fetching questions:", error);
+            alert("An error occurred while fetching quiz questions. Please try again.");
+        }
+        this.retakeQuizResultsButton.classList.remove("hidden");
+    }
 
     async fetchQuestions(categoryName) {
         const categoryId = this.getCategoryId(categoryName);
