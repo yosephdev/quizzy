@@ -123,13 +123,14 @@ class QuizApp {
             const categorySelection = document.getElementById("category-selection");
 
             if (this.questions.length > 0) {
+                this.hideLoading(); // Hide loading spinner
                 document.getElementById("quiz-interface").classList.remove("hidden");
                 document.getElementById("category-selection").classList.add("hidden");
                 this.startQuizButton.classList.remove("hidden");
                 this.retakeQuizIntroButton.classList.remove("hidden");
-                this.displayQuestion(this.questions[this.currentQuestionIndex]);
             } else {
                 alert("No questions available for this category. Please choose another category.");
+                this.hideLoading(); // Hide loading spinner even if no questions
                 document.getElementById("quiz-interface").classList.add("hidden");
                 document.getElementById("category-selection").classList.remove("hidden");
             }
@@ -369,13 +370,12 @@ class QuizApp {
     }
 
     showLoading() {
-        const quizInterface = document.getElementById('quiz-interface');
-        const loadingHTML = `
-            <div class="loading-spinner">
-                <div class="spinner"></div>
-                <p>Loading questions...</p>
-            </div>
-        `;
-        quizInterface.innerHTML = loadingHTML;
+        document.getElementById('loading-overlay').classList.remove('hidden');
+        document.getElementById('quiz-interface').classList.add('hidden');
+    }
+
+    hideLoading() {
+        document.getElementById('loading-overlay').classList.add('hidden');
+        document.getElementById('quiz-interface').classList.remove('hidden');
     }
 }
