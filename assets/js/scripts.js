@@ -263,18 +263,22 @@ function endQuiz() {
     resultsSection.classList.remove("hidden");
 
     let feedbackMessage;
-    if (score / questions.length === 1) {
+    if (score / (questions.length * 70) === 1) {
       feedbackMessage = "Perfect score! You're a trivia master!";
-    } else if (score / questions.length >= 0.7) {
+    } else if (score / (questions.length * 70) >= 0.7) {
       feedbackMessage = "Great job! You have a strong grasp on these topics.";
-    } else if (score / questions.length >= 0.5) {
+    } else if (score / (questions.length * 70) >= 0.5) {
       feedbackMessage = "Not bad! A little more study and you'll be on top.";
     } else {
       feedbackMessage = "Keep practicing and you'll improve.";
     }
 
+    const newHighScore = saveHighScore();
+
     resultsSection.innerHTML = `<h2>Your Results</h2>
-    <p id="results-text">You got ${score} out of ${questions.length}. ${feedbackMessage}</p>
+    <p id="results-text">You got ${score} points. ${feedbackMessage}</p>
+    ${newHighScore ? "<p>New High Score!</p>" : ""}
+    ${displayHighScore()}
     <button id="retake-quiz-results">Retake Quiz</button>
     <button id="choose-new-category">Choose New Category</button>`;
 
